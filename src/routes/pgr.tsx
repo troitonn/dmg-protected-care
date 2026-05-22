@@ -19,7 +19,7 @@ export const Route = createFileRoute("/pgr")({
         "Adequação à NR-1 e riscos psicossociais",
       ]}
       faqs={[
-        { q: "Qual a diferença entre PGR e GRO?", o: "" , a: "O GRO é o processo de gerenciamento de riscos e o PGR é o documento que materializa esse processo." },
+        { q: "Qual a diferença entre PGR e GRO?", a: "O GRO é o processo de gerenciamento de riscos e o PGR é o documento que materializa esse processo." },
         { q: "Microempresas precisam de PGR?", a: "Sim, com possibilidade de modelo simplificado dependendo do grau de risco e do quantitativo de colaboradores." },
       ]}
       related={[
