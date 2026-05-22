@@ -9,8 +9,98 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TreinamentosNrRouteImport } from './routes/treinamentos-nr'
+import { Route as SobreRouteImport } from './routes/sobre'
+import { Route as ProtecaoEmpresarialSstRouteImport } from './routes/protecao-empresarial-sst'
+import { Route as PgrRouteImport } from './routes/pgr'
+import { Route as PerguntasFrequentesRouteImport } from './routes/perguntas-frequentes'
+import { Route as PcmsoRouteImport } from './routes/pcmso'
+import { Route as Nr1RiscosPsicossociaisRouteImport } from './routes/nr-1-riscos-psicossociais'
+import { Route as MedicinaDoTrabalhoRouteImport } from './routes/medicina-do-trabalho'
+import { Route as LaudosRouteImport } from './routes/laudos'
+import { Route as FrancaSpRouteImport } from './routes/franca-sp'
+import { Route as EsocialSstRouteImport } from './routes/esocial-sst'
+import { Route as ContatoRouteImport } from './routes/contato'
+import { Route as CasosRouteImport } from './routes/casos'
+import { Route as BlogRouteImport } from './routes/blog'
+import { Route as AreaDoClienteRouteImport } from './routes/area-do-cliente'
 import { Route as IndexRouteImport } from './routes/index'
 
+const TreinamentosNrRoute = TreinamentosNrRouteImport.update({
+  id: '/treinamentos-nr',
+  path: '/treinamentos-nr',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SobreRoute = SobreRouteImport.update({
+  id: '/sobre',
+  path: '/sobre',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProtecaoEmpresarialSstRoute = ProtecaoEmpresarialSstRouteImport.update({
+  id: '/protecao-empresarial-sst',
+  path: '/protecao-empresarial-sst',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PgrRoute = PgrRouteImport.update({
+  id: '/pgr',
+  path: '/pgr',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PerguntasFrequentesRoute = PerguntasFrequentesRouteImport.update({
+  id: '/perguntas-frequentes',
+  path: '/perguntas-frequentes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PcmsoRoute = PcmsoRouteImport.update({
+  id: '/pcmso',
+  path: '/pcmso',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Nr1RiscosPsicossociaisRoute = Nr1RiscosPsicossociaisRouteImport.update({
+  id: '/nr-1-riscos-psicossociais',
+  path: '/nr-1-riscos-psicossociais',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MedicinaDoTrabalhoRoute = MedicinaDoTrabalhoRouteImport.update({
+  id: '/medicina-do-trabalho',
+  path: '/medicina-do-trabalho',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LaudosRoute = LaudosRouteImport.update({
+  id: '/laudos',
+  path: '/laudos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FrancaSpRoute = FrancaSpRouteImport.update({
+  id: '/franca-sp',
+  path: '/franca-sp',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EsocialSstRoute = EsocialSstRouteImport.update({
+  id: '/esocial-sst',
+  path: '/esocial-sst',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContatoRoute = ContatoRouteImport.update({
+  id: '/contato',
+  path: '/contato',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CasosRoute = CasosRouteImport.update({
+  id: '/casos',
+  path: '/casos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogRoute = BlogRouteImport.update({
+  id: '/blog',
+  path: '/blog',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AreaDoClienteRoute = AreaDoClienteRouteImport.update({
+  id: '/area-do-cliente',
+  path: '/area-do-cliente',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +109,242 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/area-do-cliente': typeof AreaDoClienteRoute
+  '/blog': typeof BlogRoute
+  '/casos': typeof CasosRoute
+  '/contato': typeof ContatoRoute
+  '/esocial-sst': typeof EsocialSstRoute
+  '/franca-sp': typeof FrancaSpRoute
+  '/laudos': typeof LaudosRoute
+  '/medicina-do-trabalho': typeof MedicinaDoTrabalhoRoute
+  '/nr-1-riscos-psicossociais': typeof Nr1RiscosPsicossociaisRoute
+  '/pcmso': typeof PcmsoRoute
+  '/perguntas-frequentes': typeof PerguntasFrequentesRoute
+  '/pgr': typeof PgrRoute
+  '/protecao-empresarial-sst': typeof ProtecaoEmpresarialSstRoute
+  '/sobre': typeof SobreRoute
+  '/treinamentos-nr': typeof TreinamentosNrRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/area-do-cliente': typeof AreaDoClienteRoute
+  '/blog': typeof BlogRoute
+  '/casos': typeof CasosRoute
+  '/contato': typeof ContatoRoute
+  '/esocial-sst': typeof EsocialSstRoute
+  '/franca-sp': typeof FrancaSpRoute
+  '/laudos': typeof LaudosRoute
+  '/medicina-do-trabalho': typeof MedicinaDoTrabalhoRoute
+  '/nr-1-riscos-psicossociais': typeof Nr1RiscosPsicossociaisRoute
+  '/pcmso': typeof PcmsoRoute
+  '/perguntas-frequentes': typeof PerguntasFrequentesRoute
+  '/pgr': typeof PgrRoute
+  '/protecao-empresarial-sst': typeof ProtecaoEmpresarialSstRoute
+  '/sobre': typeof SobreRoute
+  '/treinamentos-nr': typeof TreinamentosNrRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/area-do-cliente': typeof AreaDoClienteRoute
+  '/blog': typeof BlogRoute
+  '/casos': typeof CasosRoute
+  '/contato': typeof ContatoRoute
+  '/esocial-sst': typeof EsocialSstRoute
+  '/franca-sp': typeof FrancaSpRoute
+  '/laudos': typeof LaudosRoute
+  '/medicina-do-trabalho': typeof MedicinaDoTrabalhoRoute
+  '/nr-1-riscos-psicossociais': typeof Nr1RiscosPsicossociaisRoute
+  '/pcmso': typeof PcmsoRoute
+  '/perguntas-frequentes': typeof PerguntasFrequentesRoute
+  '/pgr': typeof PgrRoute
+  '/protecao-empresarial-sst': typeof ProtecaoEmpresarialSstRoute
+  '/sobre': typeof SobreRoute
+  '/treinamentos-nr': typeof TreinamentosNrRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/area-do-cliente'
+    | '/blog'
+    | '/casos'
+    | '/contato'
+    | '/esocial-sst'
+    | '/franca-sp'
+    | '/laudos'
+    | '/medicina-do-trabalho'
+    | '/nr-1-riscos-psicossociais'
+    | '/pcmso'
+    | '/perguntas-frequentes'
+    | '/pgr'
+    | '/protecao-empresarial-sst'
+    | '/sobre'
+    | '/treinamentos-nr'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/area-do-cliente'
+    | '/blog'
+    | '/casos'
+    | '/contato'
+    | '/esocial-sst'
+    | '/franca-sp'
+    | '/laudos'
+    | '/medicina-do-trabalho'
+    | '/nr-1-riscos-psicossociais'
+    | '/pcmso'
+    | '/perguntas-frequentes'
+    | '/pgr'
+    | '/protecao-empresarial-sst'
+    | '/sobre'
+    | '/treinamentos-nr'
+  id:
+    | '__root__'
+    | '/'
+    | '/area-do-cliente'
+    | '/blog'
+    | '/casos'
+    | '/contato'
+    | '/esocial-sst'
+    | '/franca-sp'
+    | '/laudos'
+    | '/medicina-do-trabalho'
+    | '/nr-1-riscos-psicossociais'
+    | '/pcmso'
+    | '/perguntas-frequentes'
+    | '/pgr'
+    | '/protecao-empresarial-sst'
+    | '/sobre'
+    | '/treinamentos-nr'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AreaDoClienteRoute: typeof AreaDoClienteRoute
+  BlogRoute: typeof BlogRoute
+  CasosRoute: typeof CasosRoute
+  ContatoRoute: typeof ContatoRoute
+  EsocialSstRoute: typeof EsocialSstRoute
+  FrancaSpRoute: typeof FrancaSpRoute
+  LaudosRoute: typeof LaudosRoute
+  MedicinaDoTrabalhoRoute: typeof MedicinaDoTrabalhoRoute
+  Nr1RiscosPsicossociaisRoute: typeof Nr1RiscosPsicossociaisRoute
+  PcmsoRoute: typeof PcmsoRoute
+  PerguntasFrequentesRoute: typeof PerguntasFrequentesRoute
+  PgrRoute: typeof PgrRoute
+  ProtecaoEmpresarialSstRoute: typeof ProtecaoEmpresarialSstRoute
+  SobreRoute: typeof SobreRoute
+  TreinamentosNrRoute: typeof TreinamentosNrRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/treinamentos-nr': {
+      id: '/treinamentos-nr'
+      path: '/treinamentos-nr'
+      fullPath: '/treinamentos-nr'
+      preLoaderRoute: typeof TreinamentosNrRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sobre': {
+      id: '/sobre'
+      path: '/sobre'
+      fullPath: '/sobre'
+      preLoaderRoute: typeof SobreRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/protecao-empresarial-sst': {
+      id: '/protecao-empresarial-sst'
+      path: '/protecao-empresarial-sst'
+      fullPath: '/protecao-empresarial-sst'
+      preLoaderRoute: typeof ProtecaoEmpresarialSstRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pgr': {
+      id: '/pgr'
+      path: '/pgr'
+      fullPath: '/pgr'
+      preLoaderRoute: typeof PgrRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/perguntas-frequentes': {
+      id: '/perguntas-frequentes'
+      path: '/perguntas-frequentes'
+      fullPath: '/perguntas-frequentes'
+      preLoaderRoute: typeof PerguntasFrequentesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pcmso': {
+      id: '/pcmso'
+      path: '/pcmso'
+      fullPath: '/pcmso'
+      preLoaderRoute: typeof PcmsoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/nr-1-riscos-psicossociais': {
+      id: '/nr-1-riscos-psicossociais'
+      path: '/nr-1-riscos-psicossociais'
+      fullPath: '/nr-1-riscos-psicossociais'
+      preLoaderRoute: typeof Nr1RiscosPsicossociaisRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/medicina-do-trabalho': {
+      id: '/medicina-do-trabalho'
+      path: '/medicina-do-trabalho'
+      fullPath: '/medicina-do-trabalho'
+      preLoaderRoute: typeof MedicinaDoTrabalhoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/laudos': {
+      id: '/laudos'
+      path: '/laudos'
+      fullPath: '/laudos'
+      preLoaderRoute: typeof LaudosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/franca-sp': {
+      id: '/franca-sp'
+      path: '/franca-sp'
+      fullPath: '/franca-sp'
+      preLoaderRoute: typeof FrancaSpRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/esocial-sst': {
+      id: '/esocial-sst'
+      path: '/esocial-sst'
+      fullPath: '/esocial-sst'
+      preLoaderRoute: typeof EsocialSstRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contato': {
+      id: '/contato'
+      path: '/contato'
+      fullPath: '/contato'
+      preLoaderRoute: typeof ContatoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/casos': {
+      id: '/casos'
+      path: '/casos'
+      fullPath: '/casos'
+      preLoaderRoute: typeof CasosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog': {
+      id: '/blog'
+      path: '/blog'
+      fullPath: '/blog'
+      preLoaderRoute: typeof BlogRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/area-do-cliente': {
+      id: '/area-do-cliente'
+      path: '/area-do-cliente'
+      fullPath: '/area-do-cliente'
+      preLoaderRoute: typeof AreaDoClienteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,17 +357,22 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AreaDoClienteRoute: AreaDoClienteRoute,
+  BlogRoute: BlogRoute,
+  CasosRoute: CasosRoute,
+  ContatoRoute: ContatoRoute,
+  EsocialSstRoute: EsocialSstRoute,
+  FrancaSpRoute: FrancaSpRoute,
+  LaudosRoute: LaudosRoute,
+  MedicinaDoTrabalhoRoute: MedicinaDoTrabalhoRoute,
+  Nr1RiscosPsicossociaisRoute: Nr1RiscosPsicossociaisRoute,
+  PcmsoRoute: PcmsoRoute,
+  PerguntasFrequentesRoute: PerguntasFrequentesRoute,
+  PgrRoute: PgrRoute,
+  ProtecaoEmpresarialSstRoute: ProtecaoEmpresarialSstRoute,
+  SobreRoute: SobreRoute,
+  TreinamentosNrRoute: TreinamentosNrRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}

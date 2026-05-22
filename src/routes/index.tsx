@@ -1,26 +1,52 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { SiteLayout } from "@/components/dmg/SiteLayout";
+import {
+  Hero, AuthoritySection, ProblemSection, SolutionsSection, NR1Section,
+  WhyDmgSection, DiagnosticToolsSection, BlogPreview, SocialProof,
+  LocationSection, FinalCTA,
+} from "@/components/dmg/sections";
 
 export const Route = createFileRoute("/")({
-  component: Index,
+  head: () => ({
+    meta: [
+      { title: "DMG Ocupacional — Medicina do Trabalho em Franca-SP | PCMSO, PGR, eSocial SST" },
+      { name: "description", content: "Medicina do trabalho, PCMSO, PGR, laudos, eSocial SST e NR-1 para empresas em Franca-SP. Reduza riscos, custos e passivos trabalhistas com a DMG Ocupacional." },
+      { property: "og:title", content: "DMG Ocupacional — Medicina do Trabalho em Franca-SP" },
+      { property: "og:description", content: "Elo entre segurança jurídica e acolhimento humanizado. Proteção empresarial em SST." },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": ["MedicalClinic", "LocalBusiness"],
+          name: "DMG Ocupacional",
+          description: "Clínica de medicina do trabalho e consultoria em saúde ocupacional para empresas em Franca-SP.",
+          address: { "@type": "PostalAddress", addressLocality: "Franca", addressRegion: "SP", addressCountry: "BR" },
+          areaServed: "Franca e região, SP",
+          medicalSpecialty: "OccupationalMedicine",
+          telephone: "+55-16-0000-0000",
+        }),
+      },
+    ],
+  }),
+  component: Home,
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
+function Home() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <SiteLayout>
+      <Hero />
+      <AuthoritySection />
+      <ProblemSection />
+      <SolutionsSection />
+      <NR1Section />
+      <WhyDmgSection />
+      <DiagnosticToolsSection />
+      <BlogPreview />
+      <SocialProof />
+      <LocationSection />
+      <FinalCTA />
+    </SiteLayout>
   );
-}
-
-function Index() {
-  return <PlaceholderIndex />;
 }
