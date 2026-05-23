@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TreinamentosNrRouteImport } from './routes/treinamentos-nr'
 import { Route as SobreRouteImport } from './routes/sobre'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ProtecaoEmpresarialSstRouteImport } from './routes/protecao-empresarial-sst'
 import { Route as PgrRouteImport } from './routes/pgr'
 import { Route as PerguntasFrequentesRouteImport } from './routes/perguntas-frequentes'
@@ -26,6 +27,7 @@ import { Route as BlogRouteImport } from './routes/blog'
 import { Route as AreaDoClienteRouteImport } from './routes/area-do-cliente'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AdminIndexRouteImport } from './routes/admin.index'
+import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as AdminLoginRouteImport } from './routes/admin.login'
 import { Route as AdminDashboardRouteImport } from './routes/admin.dashboard'
 import { Route as AdminCategoriasRouteImport } from './routes/admin.categorias'
@@ -42,6 +44,11 @@ const TreinamentosNrRoute = TreinamentosNrRouteImport.update({
 const SobreRoute = SobreRouteImport.update({
   id: '/sobre',
   path: '/sobre',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProtecaoEmpresarialSstRoute = ProtecaoEmpresarialSstRouteImport.update({
@@ -119,6 +126,11 @@ const AdminIndexRoute = AdminIndexRouteImport.update({
   path: '/admin/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogSlugRoute = BlogSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => BlogRoute,
+} as any)
 const AdminLoginRoute = AdminLoginRouteImport.update({
   id: '/admin/login',
   path: '/admin/login',
@@ -158,7 +170,7 @@ const AdminBlogEditarIdRoute = AdminBlogEditarIdRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/area-do-cliente': typeof AreaDoClienteRoute
-  '/blog': typeof BlogRoute
+  '/blog': typeof BlogRouteWithChildren
   '/casos': typeof CasosRoute
   '/contato': typeof ContatoRoute
   '/esocial-sst': typeof EsocialSstRoute
@@ -170,6 +182,7 @@ export interface FileRoutesByFullPath {
   '/perguntas-frequentes': typeof PerguntasFrequentesRoute
   '/pgr': typeof PgrRoute
   '/protecao-empresarial-sst': typeof ProtecaoEmpresarialSstRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
   '/treinamentos-nr': typeof TreinamentosNrRoute
   '/admin/autores': typeof AdminAutoresRoute
@@ -177,6 +190,7 @@ export interface FileRoutesByFullPath {
   '/admin/categorias': typeof AdminCategoriasRoute
   '/admin/dashboard': typeof AdminDashboardRoute
   '/admin/login': typeof AdminLoginRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/admin/': typeof AdminIndexRoute
   '/admin/blog/novo': typeof AdminBlogNovoRoute
   '/admin/blog/editar/$id': typeof AdminBlogEditarIdRoute
@@ -184,7 +198,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/area-do-cliente': typeof AreaDoClienteRoute
-  '/blog': typeof BlogRoute
+  '/blog': typeof BlogRouteWithChildren
   '/casos': typeof CasosRoute
   '/contato': typeof ContatoRoute
   '/esocial-sst': typeof EsocialSstRoute
@@ -196,6 +210,7 @@ export interface FileRoutesByTo {
   '/perguntas-frequentes': typeof PerguntasFrequentesRoute
   '/pgr': typeof PgrRoute
   '/protecao-empresarial-sst': typeof ProtecaoEmpresarialSstRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
   '/treinamentos-nr': typeof TreinamentosNrRoute
   '/admin/autores': typeof AdminAutoresRoute
@@ -203,6 +218,7 @@ export interface FileRoutesByTo {
   '/admin/categorias': typeof AdminCategoriasRoute
   '/admin/dashboard': typeof AdminDashboardRoute
   '/admin/login': typeof AdminLoginRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/admin': typeof AdminIndexRoute
   '/admin/blog/novo': typeof AdminBlogNovoRoute
   '/admin/blog/editar/$id': typeof AdminBlogEditarIdRoute
@@ -211,7 +227,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/area-do-cliente': typeof AreaDoClienteRoute
-  '/blog': typeof BlogRoute
+  '/blog': typeof BlogRouteWithChildren
   '/casos': typeof CasosRoute
   '/contato': typeof ContatoRoute
   '/esocial-sst': typeof EsocialSstRoute
@@ -223,6 +239,7 @@ export interface FileRoutesById {
   '/perguntas-frequentes': typeof PerguntasFrequentesRoute
   '/pgr': typeof PgrRoute
   '/protecao-empresarial-sst': typeof ProtecaoEmpresarialSstRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
   '/treinamentos-nr': typeof TreinamentosNrRoute
   '/admin/autores': typeof AdminAutoresRoute
@@ -230,6 +247,7 @@ export interface FileRoutesById {
   '/admin/categorias': typeof AdminCategoriasRoute
   '/admin/dashboard': typeof AdminDashboardRoute
   '/admin/login': typeof AdminLoginRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/admin/': typeof AdminIndexRoute
   '/admin/blog/novo': typeof AdminBlogNovoRoute
   '/admin/blog/editar/$id': typeof AdminBlogEditarIdRoute
@@ -251,6 +269,7 @@ export interface FileRouteTypes {
     | '/perguntas-frequentes'
     | '/pgr'
     | '/protecao-empresarial-sst'
+    | '/sitemap.xml'
     | '/sobre'
     | '/treinamentos-nr'
     | '/admin/autores'
@@ -258,6 +277,7 @@ export interface FileRouteTypes {
     | '/admin/categorias'
     | '/admin/dashboard'
     | '/admin/login'
+    | '/blog/$slug'
     | '/admin/'
     | '/admin/blog/novo'
     | '/admin/blog/editar/$id'
@@ -277,6 +297,7 @@ export interface FileRouteTypes {
     | '/perguntas-frequentes'
     | '/pgr'
     | '/protecao-empresarial-sst'
+    | '/sitemap.xml'
     | '/sobre'
     | '/treinamentos-nr'
     | '/admin/autores'
@@ -284,6 +305,7 @@ export interface FileRouteTypes {
     | '/admin/categorias'
     | '/admin/dashboard'
     | '/admin/login'
+    | '/blog/$slug'
     | '/admin'
     | '/admin/blog/novo'
     | '/admin/blog/editar/$id'
@@ -303,6 +325,7 @@ export interface FileRouteTypes {
     | '/perguntas-frequentes'
     | '/pgr'
     | '/protecao-empresarial-sst'
+    | '/sitemap.xml'
     | '/sobre'
     | '/treinamentos-nr'
     | '/admin/autores'
@@ -310,6 +333,7 @@ export interface FileRouteTypes {
     | '/admin/categorias'
     | '/admin/dashboard'
     | '/admin/login'
+    | '/blog/$slug'
     | '/admin/'
     | '/admin/blog/novo'
     | '/admin/blog/editar/$id'
@@ -318,7 +342,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AreaDoClienteRoute: typeof AreaDoClienteRoute
-  BlogRoute: typeof BlogRoute
+  BlogRoute: typeof BlogRouteWithChildren
   CasosRoute: typeof CasosRoute
   ContatoRoute: typeof ContatoRoute
   EsocialSstRoute: typeof EsocialSstRoute
@@ -330,6 +354,7 @@ export interface RootRouteChildren {
   PerguntasFrequentesRoute: typeof PerguntasFrequentesRoute
   PgrRoute: typeof PgrRoute
   ProtecaoEmpresarialSstRoute: typeof ProtecaoEmpresarialSstRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SobreRoute: typeof SobreRoute
   TreinamentosNrRoute: typeof TreinamentosNrRoute
   AdminAutoresRoute: typeof AdminAutoresRoute
@@ -354,6 +379,13 @@ declare module '@tanstack/react-router' {
       path: '/sobre'
       fullPath: '/sobre'
       preLoaderRoute: typeof SobreRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/protecao-empresarial-sst': {
@@ -461,6 +493,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog/$slug': {
+      id: '/blog/$slug'
+      path: '/$slug'
+      fullPath: '/blog/$slug'
+      preLoaderRoute: typeof BlogSlugRouteImport
+      parentRoute: typeof BlogRoute
+    }
     '/admin/login': {
       id: '/admin/login'
       path: '/admin/login'
@@ -513,6 +552,16 @@ declare module '@tanstack/react-router' {
   }
 }
 
+interface BlogRouteChildren {
+  BlogSlugRoute: typeof BlogSlugRoute
+}
+
+const BlogRouteChildren: BlogRouteChildren = {
+  BlogSlugRoute: BlogSlugRoute,
+}
+
+const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
+
 interface AdminBlogRouteChildren {
   AdminBlogNovoRoute: typeof AdminBlogNovoRoute
   AdminBlogEditarIdRoute: typeof AdminBlogEditarIdRoute
@@ -530,7 +579,7 @@ const AdminBlogRouteWithChildren = AdminBlogRoute._addFileChildren(
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AreaDoClienteRoute: AreaDoClienteRoute,
-  BlogRoute: BlogRoute,
+  BlogRoute: BlogRouteWithChildren,
   CasosRoute: CasosRoute,
   ContatoRoute: ContatoRoute,
   EsocialSstRoute: EsocialSstRoute,
@@ -542,6 +591,7 @@ const rootRouteChildren: RootRouteChildren = {
   PerguntasFrequentesRoute: PerguntasFrequentesRoute,
   PgrRoute: PgrRoute,
   ProtecaoEmpresarialSstRoute: ProtecaoEmpresarialSstRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   SobreRoute: SobreRoute,
   TreinamentosNrRoute: TreinamentosNrRoute,
   AdminAutoresRoute: AdminAutoresRoute,
