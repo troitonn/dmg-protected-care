@@ -52,7 +52,7 @@ function AdminLoginPage() {
     <div className="flex min-h-screen items-center justify-center bg-petrol-ink px-4 py-12 text-white">
       <div className="w-full max-w-md">
         <Link to="/" className="mb-8 flex items-center justify-center">
-          <DmgLogo className="h-10 w-auto" variant="light" />
+          <DmgLogo className="h-10 w-auto" />
         </Link>
         <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-7 backdrop-blur">
           <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-teal-soft">Painel administrativo</span>

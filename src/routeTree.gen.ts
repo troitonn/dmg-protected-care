@@ -25,6 +25,14 @@ import { Route as CasosRouteImport } from './routes/casos'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as AreaDoClienteRouteImport } from './routes/area-do-cliente'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AdminIndexRouteImport } from './routes/admin.index'
+import { Route as AdminLoginRouteImport } from './routes/admin.login'
+import { Route as AdminDashboardRouteImport } from './routes/admin.dashboard'
+import { Route as AdminCategoriasRouteImport } from './routes/admin.categorias'
+import { Route as AdminBlogRouteImport } from './routes/admin.blog'
+import { Route as AdminAutoresRouteImport } from './routes/admin.autores'
+import { Route as AdminBlogNovoRouteImport } from './routes/admin.blog.novo'
+import { Route as AdminBlogEditarIdRouteImport } from './routes/admin.blog.editar.$id'
 
 const TreinamentosNrRoute = TreinamentosNrRouteImport.update({
   id: '/treinamentos-nr',
@@ -106,6 +114,46 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminIndexRoute = AdminIndexRouteImport.update({
+  id: '/admin/',
+  path: '/admin/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminLoginRoute = AdminLoginRouteImport.update({
+  id: '/admin/login',
+  path: '/admin/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminDashboardRoute = AdminDashboardRouteImport.update({
+  id: '/admin/dashboard',
+  path: '/admin/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminCategoriasRoute = AdminCategoriasRouteImport.update({
+  id: '/admin/categorias',
+  path: '/admin/categorias',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminBlogRoute = AdminBlogRouteImport.update({
+  id: '/admin/blog',
+  path: '/admin/blog',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminAutoresRoute = AdminAutoresRouteImport.update({
+  id: '/admin/autores',
+  path: '/admin/autores',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminBlogNovoRoute = AdminBlogNovoRouteImport.update({
+  id: '/novo',
+  path: '/novo',
+  getParentRoute: () => AdminBlogRoute,
+} as any)
+const AdminBlogEditarIdRoute = AdminBlogEditarIdRouteImport.update({
+  id: '/editar/$id',
+  path: '/editar/$id',
+  getParentRoute: () => AdminBlogRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -124,6 +172,14 @@ export interface FileRoutesByFullPath {
   '/protecao-empresarial-sst': typeof ProtecaoEmpresarialSstRoute
   '/sobre': typeof SobreRoute
   '/treinamentos-nr': typeof TreinamentosNrRoute
+  '/admin/autores': typeof AdminAutoresRoute
+  '/admin/blog': typeof AdminBlogRouteWithChildren
+  '/admin/categorias': typeof AdminCategoriasRoute
+  '/admin/dashboard': typeof AdminDashboardRoute
+  '/admin/login': typeof AdminLoginRoute
+  '/admin/': typeof AdminIndexRoute
+  '/admin/blog/novo': typeof AdminBlogNovoRoute
+  '/admin/blog/editar/$id': typeof AdminBlogEditarIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -142,6 +198,14 @@ export interface FileRoutesByTo {
   '/protecao-empresarial-sst': typeof ProtecaoEmpresarialSstRoute
   '/sobre': typeof SobreRoute
   '/treinamentos-nr': typeof TreinamentosNrRoute
+  '/admin/autores': typeof AdminAutoresRoute
+  '/admin/blog': typeof AdminBlogRouteWithChildren
+  '/admin/categorias': typeof AdminCategoriasRoute
+  '/admin/dashboard': typeof AdminDashboardRoute
+  '/admin/login': typeof AdminLoginRoute
+  '/admin': typeof AdminIndexRoute
+  '/admin/blog/novo': typeof AdminBlogNovoRoute
+  '/admin/blog/editar/$id': typeof AdminBlogEditarIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -161,6 +225,14 @@ export interface FileRoutesById {
   '/protecao-empresarial-sst': typeof ProtecaoEmpresarialSstRoute
   '/sobre': typeof SobreRoute
   '/treinamentos-nr': typeof TreinamentosNrRoute
+  '/admin/autores': typeof AdminAutoresRoute
+  '/admin/blog': typeof AdminBlogRouteWithChildren
+  '/admin/categorias': typeof AdminCategoriasRoute
+  '/admin/dashboard': typeof AdminDashboardRoute
+  '/admin/login': typeof AdminLoginRoute
+  '/admin/': typeof AdminIndexRoute
+  '/admin/blog/novo': typeof AdminBlogNovoRoute
+  '/admin/blog/editar/$id': typeof AdminBlogEditarIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -181,6 +253,14 @@ export interface FileRouteTypes {
     | '/protecao-empresarial-sst'
     | '/sobre'
     | '/treinamentos-nr'
+    | '/admin/autores'
+    | '/admin/blog'
+    | '/admin/categorias'
+    | '/admin/dashboard'
+    | '/admin/login'
+    | '/admin/'
+    | '/admin/blog/novo'
+    | '/admin/blog/editar/$id'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -199,6 +279,14 @@ export interface FileRouteTypes {
     | '/protecao-empresarial-sst'
     | '/sobre'
     | '/treinamentos-nr'
+    | '/admin/autores'
+    | '/admin/blog'
+    | '/admin/categorias'
+    | '/admin/dashboard'
+    | '/admin/login'
+    | '/admin'
+    | '/admin/blog/novo'
+    | '/admin/blog/editar/$id'
   id:
     | '__root__'
     | '/'
@@ -217,6 +305,14 @@ export interface FileRouteTypes {
     | '/protecao-empresarial-sst'
     | '/sobre'
     | '/treinamentos-nr'
+    | '/admin/autores'
+    | '/admin/blog'
+    | '/admin/categorias'
+    | '/admin/dashboard'
+    | '/admin/login'
+    | '/admin/'
+    | '/admin/blog/novo'
+    | '/admin/blog/editar/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -236,6 +332,12 @@ export interface RootRouteChildren {
   ProtecaoEmpresarialSstRoute: typeof ProtecaoEmpresarialSstRoute
   SobreRoute: typeof SobreRoute
   TreinamentosNrRoute: typeof TreinamentosNrRoute
+  AdminAutoresRoute: typeof AdminAutoresRoute
+  AdminBlogRoute: typeof AdminBlogRouteWithChildren
+  AdminCategoriasRoute: typeof AdminCategoriasRoute
+  AdminDashboardRoute: typeof AdminDashboardRoute
+  AdminLoginRoute: typeof AdminLoginRoute
+  AdminIndexRoute: typeof AdminIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -352,8 +454,78 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin/': {
+      id: '/admin/'
+      path: '/admin'
+      fullPath: '/admin/'
+      preLoaderRoute: typeof AdminIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/login': {
+      id: '/admin/login'
+      path: '/admin/login'
+      fullPath: '/admin/login'
+      preLoaderRoute: typeof AdminLoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/dashboard': {
+      id: '/admin/dashboard'
+      path: '/admin/dashboard'
+      fullPath: '/admin/dashboard'
+      preLoaderRoute: typeof AdminDashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/categorias': {
+      id: '/admin/categorias'
+      path: '/admin/categorias'
+      fullPath: '/admin/categorias'
+      preLoaderRoute: typeof AdminCategoriasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/blog': {
+      id: '/admin/blog'
+      path: '/admin/blog'
+      fullPath: '/admin/blog'
+      preLoaderRoute: typeof AdminBlogRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/autores': {
+      id: '/admin/autores'
+      path: '/admin/autores'
+      fullPath: '/admin/autores'
+      preLoaderRoute: typeof AdminAutoresRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/blog/novo': {
+      id: '/admin/blog/novo'
+      path: '/novo'
+      fullPath: '/admin/blog/novo'
+      preLoaderRoute: typeof AdminBlogNovoRouteImport
+      parentRoute: typeof AdminBlogRoute
+    }
+    '/admin/blog/editar/$id': {
+      id: '/admin/blog/editar/$id'
+      path: '/editar/$id'
+      fullPath: '/admin/blog/editar/$id'
+      preLoaderRoute: typeof AdminBlogEditarIdRouteImport
+      parentRoute: typeof AdminBlogRoute
+    }
   }
 }
+
+interface AdminBlogRouteChildren {
+  AdminBlogNovoRoute: typeof AdminBlogNovoRoute
+  AdminBlogEditarIdRoute: typeof AdminBlogEditarIdRoute
+}
+
+const AdminBlogRouteChildren: AdminBlogRouteChildren = {
+  AdminBlogNovoRoute: AdminBlogNovoRoute,
+  AdminBlogEditarIdRoute: AdminBlogEditarIdRoute,
+}
+
+const AdminBlogRouteWithChildren = AdminBlogRoute._addFileChildren(
+  AdminBlogRouteChildren,
+)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
@@ -372,17 +544,13 @@ const rootRouteChildren: RootRouteChildren = {
   ProtecaoEmpresarialSstRoute: ProtecaoEmpresarialSstRoute,
   SobreRoute: SobreRoute,
   TreinamentosNrRoute: TreinamentosNrRoute,
+  AdminAutoresRoute: AdminAutoresRoute,
+  AdminBlogRoute: AdminBlogRouteWithChildren,
+  AdminCategoriasRoute: AdminCategoriasRoute,
+  AdminDashboardRoute: AdminDashboardRoute,
+  AdminLoginRoute: AdminLoginRoute,
+  AdminIndexRoute: AdminIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}

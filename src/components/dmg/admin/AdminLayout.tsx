@@ -59,7 +59,7 @@ export function AdminLayout({ children, title }: { children: ReactNode; title?: 
       <div className="flex min-h-screen bg-paper">
         <aside className="hidden w-64 flex-col border-r border-border bg-petrol-ink text-white lg:flex">
           <div className="border-b border-white/10 px-5 py-5">
-            <DmgLogo className="h-8 w-auto" variant="light" />
+            <DmgLogo className="h-8 w-auto" />
             <p className="mt-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-teal-soft">Painel administrativo</p>
           </div>
           <nav className="flex-1 space-y-1 px-3 py-5">
