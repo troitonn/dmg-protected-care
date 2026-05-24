@@ -20,9 +20,9 @@ export function Header() {
   const [open, setOpen] = useState(false);
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/85 backdrop-blur-xl">
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-5 py-3.5 lg:px-8">
-        <Link to="/" className="flex items-center gap-2.5" aria-label="DMG Ocupacional — Início">
-          <DmgLogo className="h-9 w-auto" />
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-5 py-3 lg:px-8">
+        <Link to="/" className="flex shrink-0 items-center" aria-label="DMG Ocupacional — Início">
+          <DmgLogo className="h-8 w-auto sm:h-9 lg:h-10" />
         </Link>
 
         <nav className="hidden items-center gap-1 xl:flex" aria-label="Principal">

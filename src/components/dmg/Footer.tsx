@@ -8,8 +8,8 @@ export function Footer() {
       <div className="pointer-events-none absolute inset-0 bg-grid-tech opacity-[0.07]" />
       <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 lg:grid-cols-12 lg:px-8">
         <div className="lg:col-span-4">
-          <div className="rounded-2xl bg-white/95 p-4 ring-1 ring-white/10">
-            <DmgLogo className="h-10 w-auto" />
+          <div className="inline-flex items-center">
+            <DmgLogo variant="light" className="h-12 w-auto" />
           </div>
           <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/70">
             Elo entre segurança jurídica e acolhimento humanizado.
