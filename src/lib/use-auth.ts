@@ -8,26 +8,32 @@ export type AuthState = {
   isStaff: boolean;
 };
 
+async function checkStaff(userId: string | undefined): Promise<boolean> {
+  if (!userId) return false;
+  const { data } = await supabase
+    .from("user_roles")
+    .select("role")
+    .eq("user_id", userId)
+    .in("role", ["admin", "editor"]);
+  return !!(data && data.length > 0);
+}
+
 export function useAuth(): AuthState {
   const [state, setState] = useState<AuthState>({ loading: true, session: null, isStaff: false });
 
   useEffect(() => {
     let mounted = true;
 
-    async function checkStaff(userId: string | undefined) {
-      if (!userId) return false;
-      const { data } = await supabase
-        .from("user_roles")
-        .select("role")
-        .eq("user_id", userId)
-        .in("role", ["admin", "editor"]);
-      return !!(data && data.length > 0);
-    }
-
+    // Listener FIRST (per Supabase guidance), then read current session.
     const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
       if (!mounted) return;
-      setState({ loading: true, session, isStaff: false });
-      checkStaff(session?.user.id).then((isStaff) => {
+      if (!session) {
+        setState({ loading: false, session: null, isStaff: false });
+        return;
+      }
+      // keep previous isStaff to avoid UI flicker while we re-check
+      setState((p) => ({ loading: true, session, isStaff: p.isStaff }));
+      checkStaff(session.user.id).then((isStaff) => {
         if (mounted) setState({ loading: false, session, isStaff });
       });
     });
@@ -45,4 +51,8 @@ export function useAuth(): AuthState {
   }, []);
 
   return state;
+}
+
+export async function signOut() {
+  await supabase.auth.signOut();
 }
