@@ -68,16 +68,27 @@ export const Route = createFileRoute("/blog/$slug")({
   component: PostPage,
 });
 
+type RelatedPost = { id: string; title: string; slug: string; excerpt: string | null; featured_image_url: string | null; blog_categories: { name: string } | null };
+
 function PostPage() {
   const { slug } = useParams({ from: "/blog/$slug" });
-  const [data, setData] = useState<{ post: Post; faqs: Faq[] } | null>(null);
+  const [data, setData] = useState<{ post: Post; faqs: Faq[]; related: RelatedPost[] } | null>(null);
 
   useEffect(() => {
     (async () => {
       const { data: post } = await supabase.from("blog_posts").select("*,blog_categories(name,slug),blog_authors(name,role,avatar_url)").eq("slug", slug).eq("status", "published").maybeSingle();
       if (!post) return;
-      const { data: faqs } = await supabase.from("blog_faqs").select("question,answer").eq("post_id", post.id).order("sort_order");
-      setData({ post: post as unknown as Post, faqs: (faqs ?? []) as Faq[] });
+      const [{ data: faqs }, { data: rel }] = await Promise.all([
+        supabase.from("blog_faqs").select("question,answer").eq("post_id", post.id).order("sort_order"),
+        supabase.from("blog_related_posts").select("related_post_id").eq("post_id", post.id),
+      ]);
+      let related: RelatedPost[] = [];
+      const ids = (rel ?? []).map((r) => r.related_post_id);
+      if (ids.length) {
+        const { data: rp } = await supabase.from("blog_posts").select("id,title,slug,excerpt,featured_image_url,blog_categories(name)").in("id", ids).eq("status", "published");
+        related = (rp as unknown as RelatedPost[]) ?? [];
+      }
+      setData({ post: post as unknown as Post, faqs: (faqs ?? []) as Faq[], related });
     })();
   }, [slug]);
 
@@ -89,7 +100,7 @@ function PostPage() {
     );
   }
 
-  const { post, faqs } = data;
+  const { post, faqs, related } = data;
   const html = renderMarkdown(post.content);
   const toc = extractHeadings(post.content);
 
