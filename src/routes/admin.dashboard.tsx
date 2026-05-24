@@ -12,27 +12,35 @@ export const Route = createFileRoute("/admin/dashboard")({
   component: DashboardPage,
 });
 
-type Stats = { published: number; drafts: number; categories: number; authors: number };
+type Stats = { published: number; drafts: number; archived: number; categories: number; authors: number; noMeta: number; noDirect: number; noFaq: number; noImage: number };
 type RecentPost = { id: string; title: string; status: string; updated_at: string };
 
 function DashboardPage() {
-  const [stats, setStats] = useState<Stats>({ published: 0, drafts: 0, categories: 0, authors: 0 });
+  const [stats, setStats] = useState<Stats>({ published: 0, drafts: 0, archived: 0, categories: 0, authors: 0, noMeta: 0, noDirect: 0, noFaq: 0, noImage: 0 });
   const [recent, setRecent] = useState<RecentPost[]>([]);
 
   useEffect(() => {
     (async () => {
-      const [pub, dft, cat, aut, rec] = await Promise.all([
+      const [pub, dft, arc, cat, aut, noMeta, noDirect, noImage, rec, allPosts, faqs] = await Promise.all([
         supabase.from("blog_posts").select("id", { count: "exact", head: true }).eq("status", "published"),
         supabase.from("blog_posts").select("id", { count: "exact", head: true }).eq("status", "draft"),
+        supabase.from("blog_posts").select("id", { count: "exact", head: true }).eq("status", "archived"),
         supabase.from("blog_categories").select("id", { count: "exact", head: true }),
         supabase.from("blog_authors").select("id", { count: "exact", head: true }),
+        supabase.from("blog_posts").select("id", { count: "exact", head: true }).is("meta_description", null),
+        supabase.from("blog_posts").select("id", { count: "exact", head: true }).is("direct_answer", null),
+        supabase.from("blog_posts").select("id", { count: "exact", head: true }).is("featured_image_url", null),
         supabase.from("blog_posts").select("id,title,status,updated_at").order("updated_at", { ascending: false }).limit(6),
+        supabase.from("blog_posts").select("id"),
+        supabase.from("blog_faqs").select("post_id"),
       ]);
+      const postIds = new Set((allPosts.data ?? []).map((p) => p.id));
+      const withFaq = new Set((faqs.data ?? []).map((f) => f.post_id));
+      const noFaq = [...postIds].filter((id) => !withFaq.has(id)).length;
       setStats({
-        published: pub.count ?? 0,
-        drafts: dft.count ?? 0,
-        categories: cat.count ?? 0,
-        authors: aut.count ?? 0,
+        published: pub.count ?? 0, drafts: dft.count ?? 0, archived: arc.count ?? 0,
+        categories: cat.count ?? 0, authors: aut.count ?? 0,
+        noMeta: noMeta.count ?? 0, noDirect: noDirect.count ?? 0, noFaq, noImage: noImage.count ?? 0,
       });
       setRecent((rec.data as RecentPost[]) ?? []);
     })();
@@ -41,8 +49,15 @@ function DashboardPage() {
   const cards = [
     { label: "Publicados", value: stats.published, icon: FileText, to: "/admin/blog" },
     { label: "Rascunhos", value: stats.drafts, icon: FileText, to: "/admin/blog" },
+    { label: "Arquivados", value: stats.archived, icon: FileText, to: "/admin/blog" },
     { label: "Categorias", value: stats.categories, icon: FolderTree, to: "/admin/categorias" },
     { label: "Autores", value: stats.authors, icon: Users, to: "/admin/autores" },
+  ];
+  const quality = [
+    { label: "Sem meta description", value: stats.noMeta },
+    { label: "Sem resposta direta GEO", value: stats.noDirect },
+    { label: "Sem FAQ", value: stats.noFaq },
+    { label: "Sem imagem destacada", value: stats.noImage },
   ];
 
   return (
