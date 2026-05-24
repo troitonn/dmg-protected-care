@@ -207,6 +207,21 @@ function PostPage() {
               </div>
             </section>
           )}
+          {related.length > 0 && (
+            <section className="mt-14">
+              <h2 className="text-2xl font-semibold">Conteúdos relacionados</h2>
+              <div className="mt-5 grid gap-4 sm:grid-cols-2">
+                {related.map((r) => (
+                  <Link key={r.id} to="/blog/$slug" params={{ slug: r.slug }} className="group rounded-2xl border border-border bg-white p-4 transition hover:-translate-y-0.5 hover:border-petrol/40">
+                    {r.blog_categories && <span className="text-[10px] font-semibold uppercase tracking-wider text-primary">{r.blog_categories.name}</span>}
+                    <h3 className="mt-1 text-base font-semibold leading-snug group-hover:text-primary">{r.title}</h3>
+                    {r.excerpt && <p className="mt-2 line-clamp-2 text-sm text-muted-foreground">{r.excerpt}</p>}
+                    <span className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-primary">Ler artigo <ArrowRight className="h-3.5 w-3.5" /></span>
+                  </Link>
+                ))}
+              </div>
+            </section>
+          )}
         </div>
       </article>
 
