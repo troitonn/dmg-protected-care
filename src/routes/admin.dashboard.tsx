@@ -62,7 +62,7 @@ function DashboardPage() {
 
   return (
     <AdminLayout title="Dashboard">
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
         {cards.map((c) => {
           const Icon = c.icon;
           return (
@@ -75,6 +75,18 @@ function DashboardPage() {
             </Link>
           );
         })}
+      </div>
+
+      <div className="mt-6 rounded-2xl border border-border bg-white p-5">
+        <h2 className="text-sm font-semibold">Qualidade SEO/GEO dos artigos</h2>
+        <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {quality.map((q) => (
+            <Link key={q.label} to="/admin/blog" className={`rounded-xl border p-4 ${q.value > 0 ? "border-amber-300 bg-amber-50" : "border-emerald-300 bg-emerald-50"}`}>
+              <p className="text-xs font-medium text-foreground/70">{q.label}</p>
+              <p className={`mt-1 text-2xl font-semibold ${q.value > 0 ? "text-amber-700" : "text-emerald-700"}`}>{q.value}</p>
+            </Link>
+          ))}
+        </div>
       </div>
 
       <div className="mt-8 grid gap-6 lg:grid-cols-3">
