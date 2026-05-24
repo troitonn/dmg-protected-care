@@ -1,20 +1,28 @@
+import { useEffect } from "react";
 import { Link, useNavigate, useRouter } from "@tanstack/react-router";
 import type { ReactNode } from "react";
 import { useAuth } from "@/lib/use-auth";
 import { supabase } from "@/integrations/supabase/client";
 import { DmgLogo } from "@/components/dmg/DmgLogo";
-import { LayoutDashboard, FileText, FolderTree, Users, LogOut, ExternalLink } from "lucide-react";
+import { LayoutDashboard, FileText, FolderTree, Users, LogOut, ExternalLink, Search } from "lucide-react";
 
 const NAV = [
   { to: "/admin/dashboard", label: "Dashboard", icon: LayoutDashboard },
   { to: "/admin/blog", label: "Artigos", icon: FileText },
   { to: "/admin/categorias", label: "Categorias", icon: FolderTree },
   { to: "/admin/autores", label: "Autores", icon: Users },
+  { to: "/admin/seo", label: "SEO", icon: Search },
 ] as const;
 
 export function AdminGuard({ children }: { children: ReactNode }) {
   const { loading, session, isStaff } = useAuth();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!loading && !session) {
+      navigate({ to: "/admin/login", replace: true });
+    }
+  }, [loading, session, navigate]);
 
   if (loading) {
     return (
@@ -24,10 +32,7 @@ export function AdminGuard({ children }: { children: ReactNode }) {
     );
   }
 
-  if (!session) {
-    if (typeof window !== "undefined") navigate({ to: "/admin/login" });
-    return null;
-  }
+  if (!session) return null;
 
   if (!isStaff) {
     return (
@@ -50,8 +55,8 @@ export function AdminLayout({ children, title }: { children: ReactNode; title?: 
 
   async function logout() {
     await supabase.auth.signOut();
-    router.invalidate();
-    navigate({ to: "/admin/login" });
+    await router.invalidate();
+    navigate({ to: "/admin/login", replace: true });
   }
 
   return (
@@ -59,8 +64,8 @@ export function AdminLayout({ children, title }: { children: ReactNode; title?: 
       <div className="flex min-h-screen bg-paper">
         <aside className="hidden w-64 flex-col border-r border-border bg-petrol-ink text-white lg:flex">
           <div className="border-b border-white/10 px-5 py-5">
-            <DmgLogo className="h-8 w-auto" />
-            <p className="mt-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-teal-soft">Painel administrativo</p>
+            <DmgLogo variant="light" className="h-9 w-auto" />
+            <p className="mt-3 text-[11px] font-semibold uppercase tracking-[0.2em] text-teal-soft">Painel administrativo</p>
           </div>
           <nav className="flex-1 space-y-1 px-3 py-5">
             {NAV.map((n) => {
@@ -86,9 +91,14 @@ export function AdminLayout({ children, title }: { children: ReactNode; title?: 
         <div className="flex min-w-0 flex-1 flex-col">
           <header className="flex items-center justify-between border-b border-border bg-white px-5 py-4 lg:px-8">
             <h1 className="text-base font-semibold text-foreground">{title}</h1>
-            <Link to="/admin/blog/novo" className="rounded-full bg-petrol px-4 py-2 text-xs font-semibold text-white hover:bg-petrol-ink">
-              + Novo artigo
-            </Link>
+            <div className="flex items-center gap-2">
+              <Link to="/admin/blog/novo" className="rounded-full bg-petrol px-4 py-2 text-xs font-semibold text-white hover:bg-petrol-ink">
+                + Novo artigo
+              </Link>
+              <button onClick={logout} className="rounded-full border border-border px-3 py-2 text-xs font-medium text-foreground/70 hover:border-petrol hover:text-petrol lg:hidden">
+                Sair
+              </button>
+            </div>
           </header>
           <main className="flex-1 overflow-x-hidden p-5 lg:p-8">{children}</main>
         </div>
