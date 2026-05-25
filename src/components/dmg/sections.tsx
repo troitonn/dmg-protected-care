@@ -20,7 +20,7 @@ export function Hero() {
       <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-20 lg:grid-cols-12 lg:gap-10 lg:px-8 lg:py-28">
         <div className="lg:col-span-7">
           <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.18em] text-teal-soft backdrop-blur">
-            <span className="h-1.5 w-1.5 rounded-full bg-teal-soft" /> Medicina do trabalho · Franca-SP
+            <span className="h-1.5 w-1.5 rounded-full bg-teal-soft" /> Medicina do trabalho · Osasco-SP e região
           </span>
           <h1 className="mt-5 text-balance text-4xl font-semibold leading-[1.05] sm:text-5xl lg:text-[3.6rem]">
             Medicina do trabalho para empresas que precisam{" "}
@@ -46,7 +46,7 @@ export function Hero() {
             {[
               ["+15", "anos de SST"],
               ["100%", "conformidade legal"],
-              ["Franca", "e região"],
+              ["Osasco", "e região"],
             ].map(([k, v]) => (
               <div key={v}>
                 <dt className="text-2xl font-semibold text-teal-soft">{k}</dt>
@@ -76,7 +76,7 @@ export function Hero() {
 /* ====================== AUTHORITY CARDS ====================== */
 const AUTHORITY = [
   { icon: ShieldCheck, title: "PCMSO, PGR, ASO, laudos e eSocial SST", text: "Cobertura completa das obrigações legais de saúde e segurança." },
-  { icon: MapPin, title: "Atendimento em Franca-SP e região", text: "Equipe local, agilidade e conhecimento da realidade produtiva." },
+  { icon: MapPin, title: "Atendimento em Osasco-SP e região", text: "Equipe local, agilidade e conhecimento da realidade produtiva." },
   { icon: TrendingDown, title: "Redução de riscos, custos e FAP", text: "Foco em conformidade, prevenção e proteção empresarial." },
   { icon: Stethoscope, title: "Técnica + humanização", text: "Especialistas em saúde ocupacional com escuta cuidadosa." },
 ];
@@ -252,7 +252,7 @@ const PILLARS = [
   { title: "Acolhimento humanizado", text: "Atendimento que respeita o colaborador e fortalece a cultura de cuidado." },
   { title: "Precisão técnica", text: "Critérios médicos e de engenharia de segurança aplicados com rigor." },
   { title: "Visão empresarial", text: "Saúde ocupacional como ativo de gestão, não como custo isolado." },
-  { title: "Atendimento regional", text: "Conhecimento da rotina produtiva de Franca-SP e do polo calçadista." },
+  { title: "Atendimento regional", text: "Conhecimento da rotina de empresas em Osasco, Itapevi, Cajamar, Carapicuíba e região." },
   { title: "Tecnologia documental", text: "Eventos do eSocial, laudos e prontuários organizados e acessíveis." },
 ];
 
@@ -345,7 +345,7 @@ const POSTS = [
   { tag: "NR-1", title: "NR-1 e riscos psicossociais: como se adequar?", excerpt: "Passo a passo técnico para integrar saúde mental ao PGR." },
   { tag: "eSocial", title: "eSocial SST: quais eventos sua empresa precisa enviar?", excerpt: "S-2210, S-2220 e S-2240 sem retrabalho e dentro do prazo." },
   { tag: "Laudos", title: "LTCAT, insalubridade e periculosidade: diferenças", excerpt: "Quando cada laudo é exigido e quais riscos enderaça." },
-  { tag: "Franca-SP", title: "Medicina do trabalho em Franca-SP: guia para empresas", excerpt: "Realidade do polo calçadista, indústria e serviços." },
+  { tag: "Osasco-SP", title: "Medicina do trabalho em Osasco-SP: guia para empresas", excerpt: "Realidade de empresas da indústria, comércio, serviços, logística e construção civil." },
 ];
 
 export function BlogPreview() {
@@ -435,16 +435,14 @@ export function LocationSection() {
         <div className="lg:col-span-6">
           <SectionTag tone="dark">Localização</SectionTag>
           <h2 className="mt-3 text-balance text-3xl font-semibold leading-tight sm:text-4xl">
-            Medicina do trabalho em Franca-SP para empresas que produzem todos os dias.
+            Medicina do trabalho em Osasco-SP, com atendimento em Itapevi, Cajamar, Carapicuíba e região.
           </h2>
           <p className="mt-5 text-pretty text-white/75 sm:text-[17px]">
-            Atendemos indústria, comércio, serviços, agronegócio e o polo
-            calçadista — com a agilidade de uma equipe local e a profundidade
-            técnica de uma operação especializada.
+            Conhecimento da rotina de empresas em Osasco, Itapevi, Cajamar, Carapicuíba e região oeste da Grande São Paulo, com atuação em setores como indústria, comércio, serviços, logística, construção civil e operações administrativas.
           </p>
 
           <ul className="mt-8 space-y-3 text-sm">
-            <li className="flex items-start gap-3"><MapPin className="mt-0.5 h-4 w-4 text-teal-soft" /> Franca-SP — atendimento à região</li>
+            <li className="flex items-start gap-3"><MapPin className="mt-0.5 h-4 w-4 text-teal-soft" /> Osasco-SP — atendimento à região</li>
             <li className="flex items-start gap-3"><Phone className="mt-0.5 h-4 w-4 text-teal-soft" /> +55 11 97569-1076</li>
             <li className="flex items-start gap-3"><MessageCircle className="mt-0.5 h-4 w-4 text-teal-soft" /> WhatsApp atendimento comercial</li>
           </ul>
@@ -454,15 +452,15 @@ export function LocationSection() {
               Falar pelo WhatsApp <ArrowRight className="h-4 w-4" />
             </a>
             <Link to="/franca-sp" className="inline-flex items-center gap-2 rounded-full border border-white/20 px-6 py-3.5 text-sm font-medium hover:border-teal-soft hover:text-teal-soft">
-              Página de Franca-SP
+              Página de Osasco-SP
             </Link>
           </div>
         </div>
 
         <div className="overflow-hidden rounded-3xl ring-1 ring-white/15 lg:col-span-6">
           <iframe
-            title="DMG Ocupacional — Franca-SP"
-            src="https://www.google.com/maps?q=Franca,+SP&output=embed"
+            title="DMG Ocupacional — Osasco-SP"
+            src="https://www.google.com/maps?q=Osasco,+SP&output=embed"
             className="h-full min-h-[360px] w-full"
             loading="lazy"
           />
