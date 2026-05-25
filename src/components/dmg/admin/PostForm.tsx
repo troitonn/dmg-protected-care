@@ -46,7 +46,7 @@ const EMPTY: PostFormValues = {
   category_id: "", author_id: "", reviewer_name: "", reviewer_credentials: "",
   meta_title: "", meta_description: "", primary_keyword: "", secondary_keywords: "",
   status: "draft", reading_time: "", canonical_url: "", cta_label: "", cta_url: "",
-  geo_entities: "", geo_questions: "", geo_services: "", geo_locality: "Franca-SP",
+  geo_entities: "", geo_questions: "", geo_services: "", geo_locality: "Osasco-SP e região",
   published_at: "",
 };
 
