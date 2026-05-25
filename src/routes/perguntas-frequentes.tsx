@@ -20,7 +20,7 @@ export const Route = createFileRoute("/perguntas-frequentes")({
         { q: "Toda empresa precisa de PCMSO e PGR?", a: "Sim. Toda empresa com empregados CLT precisa manter PCMSO e PGR, exceto exceções específicas previstas em norma." },
         { q: "O que acontece se eu não enviar os eventos do eSocial SST?", a: "A empresa fica exposta a multas, inconsistências cadastrais e perda de defesa em ações trabalhistas e previdenciárias." },
         { q: "Como funciona a adequação à NR-1?", a: "Diagnóstico psicossocial, integração ao PGR, plano de ação documentado e treinamento das lideranças." },
-        { q: "A DMG atende fora de Franca-SP?", a: "Sim, atendemos toda a região de Franca-SP, com modelos in company para empresas com escala adequada." },
+        { q: "A DMG atende fora de Osasco-SP?", a: "Sim. A DMG possui matriz em Osasco-SP, na Clínica DIMEG, e atende empresas em Itapevi, Cajamar, Carapicuíba e cidades próximas, inclusive com modelo in company quando adequado." },
       ]}
     />
   ),
