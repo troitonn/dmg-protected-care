@@ -2,10 +2,16 @@ import { createFileRoute } from "@tanstack/react-router";
 import { InnerPage } from "@/components/dmg/InnerPage";
 
 export const Route = createFileRoute("/laudos")({
-  head: () => ({ meta: [
+  head: () => ({
+    meta: [
     { title: "Laudos Técnicos: LTCAT, Insalubridade, Periculosidade e Ergonômico | DMG" },
     { name: "description", content: "Laudos técnicos em SST emitidos com rigor médico e de engenharia de segurança." },
-  ]}),
+    { property: "og:url", content: "https://dmg-protected-care.lovable.app/laudos" },
+    { property: "og:type", content: "website" },
+  ],
+    links: [{ rel: "canonical", href: "https://dmg-protected-care.lovable.app/laudos" }],
+    scripts: [{ type: "application/ld+json", children: "{\"@context\": \"https://schema.org\", \"@type\": \"Service\", \"name\": \"Laudos T\u00e9cnicos Ocupacionais\", \"description\": \"LTCAT, laudo de insalubridade (NR-15), periculosidade (NR-16) e ergon\u00f4mico (NR-17) com responsabilidade t\u00e9cnica.\", \"serviceType\": \"Laudos T\u00e9cnicos Ocupacionais\", \"provider\": {\"@id\": \"https://dmg-protected-care.lovable.app/#business\"}, \"areaServed\": [{\"@type\": \"City\", \"name\": \"Osasco\"}, {\"@type\": \"City\", \"name\": \"Itapevi\"}, {\"@type\": \"City\", \"name\": \"Cajamar\"}, {\"@type\": \"City\", \"name\": \"Carapicu\u00edba\"}], \"url\": \"https://dmg-protected-care.lovable.app/laudos\"}" }],
+  }),
   component: () => (
     <InnerPage
       eyebrow="Laudos Técnicos"

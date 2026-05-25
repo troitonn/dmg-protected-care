@@ -14,7 +14,7 @@ export function Footer() {
           <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/70">
             Elo entre segurança jurídica e acolhimento humanizado.
             Medicina do trabalho, gestão de riscos e proteção empresarial
-            para empresas em Franca-SP e região.
+            para empresas em Osasco, Itapevi, Cajamar, Carapicuíba e região metropolitana de São Paulo.
           </p>
           <div className="mt-6 flex gap-3">
             <a href="#" aria-label="LinkedIn" className="rounded-full border border-white/15 p-2 hover:border-teal-soft hover:text-teal-soft"><Linkedin className="h-4 w-4" /></a>
@@ -48,16 +48,16 @@ export function Footer() {
 
         <div className="space-y-4 text-sm text-white/80 lg:col-span-3">
           <h4 className="text-xs font-semibold uppercase tracking-[0.2em] text-teal-soft">Contato</h4>
-          <p className="flex items-start gap-2"><MapPin className="mt-0.5 h-4 w-4 shrink-0 text-teal-soft" />Franca-SP — atendimento à região</p>
-          <p className="flex items-start gap-2"><Phone className="mt-0.5 h-4 w-4 shrink-0 text-teal-soft" />(16) 0000-0000</p>
-          <p className="flex items-start gap-2"><Mail className="mt-0.5 h-4 w-4 shrink-0 text-teal-soft" />contato@dmgocupacional.com.br</p>
+          <p className="flex items-start gap-2"><MapPin className="mt-0.5 h-4 w-4 shrink-0 text-teal-soft" />Osasco, Itapevi, Cajamar, Carapicuíba e região</p>
+          <a href="https://wa.me/5511975691076" target="_blank" rel="noopener noreferrer" className="flex items-start gap-2 hover:text-white"><Phone className="mt-0.5 h-4 w-4 shrink-0 text-teal-soft" />+55 11 97569-1076</a>
+          <a href="mailto:contato@dmgocupacional.com" className="flex items-start gap-2 hover:text-white"><Mail className="mt-0.5 h-4 w-4 shrink-0 text-teal-soft" />contato@dmgocupacional.com</a>
           <p className="flex items-start gap-2"><Clock className="mt-0.5 h-4 w-4 shrink-0 text-teal-soft" />Seg. a sex., 7h às 18h</p>
         </div>
       </div>
 
       <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-2 px-5 py-5 text-xs text-white/55 lg:flex-row lg:items-center lg:px-8">
-          <p>© {new Date().getFullYear()} DMG Ocupacional · Medicina do trabalho em Franca-SP</p>
+          <p>© {new Date().getFullYear()} DMG Ocupacional · Medicina e segurança do trabalho · Osasco / Grande São Paulo</p>
           <div className="flex gap-5">
             <a href="#" className="hover:text-white">Política de privacidade</a>
             <a href="#" className="hover:text-white">Google Business</a>

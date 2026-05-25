@@ -46,7 +46,7 @@ export function Header() {
             Solicitar orçamento
           </Link>
           <a
-            href="https://wa.me/5516000000000?text=Quero%20falar%20com%20um%20consultor%20DMG"
+            href="https://wa.me/5511975691076?text=Quero%20falar%20com%20um%20consultor%20DMG"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-soft transition-all hover:translate-y-[-1px] hover:bg-primary/90"
@@ -79,7 +79,7 @@ export function Header() {
               </Link>
             ))}
             <a
-              href="https://wa.me/5516000000000"
+              href="https://wa.me/5511975691076"
               target="_blank"
               rel="noopener noreferrer"
               className="mt-2 inline-flex items-center justify-center gap-1.5 rounded-full bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground"

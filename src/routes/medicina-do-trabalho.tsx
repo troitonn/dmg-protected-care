@@ -2,10 +2,16 @@ import { createFileRoute } from "@tanstack/react-router";
 import { InnerPage } from "@/components/dmg/InnerPage";
 
 export const Route = createFileRoute("/medicina-do-trabalho")({
-  head: () => ({ meta: [
+  head: () => ({
+    meta: [
     { title: "Medicina do Trabalho em Franca-SP | DMG Ocupacional" },
     { name: "description", content: "Coordenação médica, ASO, PCMSO e gestão integrada de saúde ocupacional para empresas em Franca-SP." },
-  ]}),
+    { property: "og:url", content: "https://dmg-protected-care.lovable.app/medicina-do-trabalho" },
+    { property: "og:type", content: "website" },
+  ],
+    links: [{ rel: "canonical", href: "https://dmg-protected-care.lovable.app/medicina-do-trabalho" }],
+    scripts: [{ type: "application/ld+json", children: "{\"@context\": \"https://schema.org\", \"@type\": \"Service\", \"name\": \"Medicina do Trabalho\", \"description\": \"Coordena\u00e7\u00e3o m\u00e9dica, ASO admissional, peri\u00f3dico, demissional e de retorno ao trabalho para empresas na Grande S\u00e3o Paulo.\", \"serviceType\": \"Medicina do Trabalho\", \"provider\": {\"@id\": \"https://dmg-protected-care.lovable.app/#business\"}, \"areaServed\": [{\"@type\": \"City\", \"name\": \"Osasco\"}, {\"@type\": \"City\", \"name\": \"Itapevi\"}, {\"@type\": \"City\", \"name\": \"Cajamar\"}, {\"@type\": \"City\", \"name\": \"Carapicu\u00edba\"}], \"url\": \"https://dmg-protected-care.lovable.app/medicina-do-trabalho\"}" }],
+  }),
   component: () => (
     <InnerPage
       eyebrow="Medicina do Trabalho"

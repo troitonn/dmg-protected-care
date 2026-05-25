@@ -2,10 +2,16 @@ import { createFileRoute } from "@tanstack/react-router";
 import { InnerPage } from "@/components/dmg/InnerPage";
 
 export const Route = createFileRoute("/pcmso")({
-  head: () => ({ meta: [
+  head: () => ({
+    meta: [
     { title: "PCMSO — Programa de Controle Médico de Saúde Ocupacional | DMG" },
     { name: "description", content: "PCMSO técnico, auditável e alinhado ao PGR para empresas em Franca-SP." },
-  ]}),
+    { property: "og:url", content: "https://dmg-protected-care.lovable.app/pcmso" },
+    { property: "og:type", content: "website" },
+  ],
+    links: [{ rel: "canonical", href: "https://dmg-protected-care.lovable.app/pcmso" }],
+    scripts: [{ type: "application/ld+json", children: "{\"@context\": \"https://schema.org\", \"@type\": \"Service\", \"name\": \"PCMSO \u2014 Programa de Controle M\u00e9dico de Sa\u00fade Ocupacional\", \"description\": \"Elabora\u00e7\u00e3o, execu\u00e7\u00e3o e revis\u00e3o anual do PCMSO conforme NR-7, integrado ao PGR e ao eSocial SST.\", \"serviceType\": \"PCMSO \u2014 Programa de Controle M\u00e9dico de Sa\u00fade Ocupacional\", \"provider\": {\"@id\": \"https://dmg-protected-care.lovable.app/#business\"}, \"areaServed\": [{\"@type\": \"City\", \"name\": \"Osasco\"}, {\"@type\": \"City\", \"name\": \"Itapevi\"}, {\"@type\": \"City\", \"name\": \"Cajamar\"}, {\"@type\": \"City\", \"name\": \"Carapicu\u00edba\"}], \"url\": \"https://dmg-protected-care.lovable.app/pcmso\"}" }],
+  }),
   component: () => (
     <InnerPage
       eyebrow="PCMSO"

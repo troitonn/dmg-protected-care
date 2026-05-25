@@ -2,10 +2,15 @@ import { createFileRoute } from "@tanstack/react-router";
 import { InnerPage } from "@/components/dmg/InnerPage";
 
 export const Route = createFileRoute("/perguntas-frequentes")({
-  head: () => ({ meta: [
+  head: () => ({
+    meta: [
     { title: "Perguntas frequentes | DMG Ocupacional" },
     { name: "description", content: "Dúvidas comuns sobre medicina do trabalho, PCMSO, PGR, eSocial SST e NR-1." },
-  ]}),
+    { property: "og:url", content: "https://dmg-protected-care.lovable.app/perguntas-frequentes" },
+    { property: "og:type", content: "website" },
+  ],
+    links: [{ rel: "canonical", href: "https://dmg-protected-care.lovable.app/perguntas-frequentes" }],
+  }),
   component: () => (
     <InnerPage
       eyebrow="FAQ"

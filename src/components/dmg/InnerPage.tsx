@@ -32,7 +32,7 @@ export function InnerPage({ eyebrow, title, summary, highlights = [], faqs = [],
             <Link to="/contato" className="inline-flex items-center gap-2 rounded-full bg-teal-soft px-6 py-3.5 text-sm font-semibold text-petrol-ink hover:bg-white">
               Solicitar orçamento <ArrowRight className="h-4 w-4" />
             </Link>
-            <a href="https://wa.me/5516000000000" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border border-white/20 px-6 py-3.5 text-sm font-medium hover:border-teal-soft hover:text-teal-soft">
+            <a href="https://wa.me/5511975691076" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border border-white/20 px-6 py-3.5 text-sm font-medium hover:border-teal-soft hover:text-teal-soft">
               Falar no WhatsApp
             </a>
           </div>
