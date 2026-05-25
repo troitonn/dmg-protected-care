@@ -23,7 +23,7 @@ type SeoRow = {
 };
 
 const SUGGESTED_PATHS = [
-  "/", "/blog", "/medicina-do-trabalho-franca-sp", "/pcmso", "/pgr", "/esocial-sst",
+  "/", "/blog", "/medicina-do-trabalho", "/pcmso", "/pgr", "/esocial-sst",
   "/nr-1-riscos-psicossociais", "/laudos-tecnicos", "/ltcat", "/aso-exame-ocupacional",
   "/treinamentos-nr", "/protecao-empresarial-sst", "/franca-sp", "/perguntas-frequentes",
 ];
