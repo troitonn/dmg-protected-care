@@ -36,12 +36,12 @@ function Contato() {
             <InfoRow icon={Phone} label="Telefone" value="(16) 0000-0000" />
             <InfoRow icon={Mail} label="E-mail" value="contato@dmgocupacional.com.br" />
             <InfoRow icon={Clock} label="Horário" value="Seg. a sex., 7h às 18h" />
-            <a href="https://wa.me/5516000000000" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary/90">
+            <a href="https://wa.me/5511975691076" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary/90">
               <MessageCircle className="h-4 w-4" /> Falar pelo WhatsApp
             </a>
           </div>
 
-          <form className="grid gap-4 rounded-3xl border border-border bg-card p-7 shadow-soft lg:col-span-7" onSubmit={(e) => { e.preventDefault(); window.location.href = "https://wa.me/5516000000000"; }}>
+          <form className="grid gap-4 rounded-3xl border border-border bg-card p-7 shadow-soft lg:col-span-7" onSubmit={(e) => { e.preventDefault(); window.location.href = "https://wa.me/5511975691076"; }}>
             <div className="grid gap-4 sm:grid-cols-2">
               <Field label="Nome" name="nome" required />
               <Field label="Empresa" name="empresa" required />

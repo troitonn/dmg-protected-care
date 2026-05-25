@@ -450,7 +450,7 @@ export function LocationSection() {
           </ul>
 
           <div className="mt-9 flex flex-wrap gap-3">
-            <a href="https://wa.me/5516000000000" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full bg-teal-soft px-6 py-3.5 text-sm font-semibold text-petrol-ink hover:bg-white">
+            <a href="https://wa.me/5511975691076" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full bg-teal-soft px-6 py-3.5 text-sm font-semibold text-petrol-ink hover:bg-white">
               Falar pelo WhatsApp <ArrowRight className="h-4 w-4" />
             </a>
             <Link to="/franca-sp" className="inline-flex items-center gap-2 rounded-full border border-white/20 px-6 py-3.5 text-sm font-medium hover:border-teal-soft hover:text-teal-soft">
@@ -493,7 +493,7 @@ export function FinalCTA() {
               <Link to="/contato" className="inline-flex items-center gap-2 rounded-full bg-teal-soft px-6 py-3.5 text-sm font-semibold text-petrol-ink hover:bg-white">
                 Solicitar orçamento <ArrowRight className="h-4 w-4" />
               </Link>
-              <a href="https://wa.me/5516000000000" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border border-white/20 px-6 py-3.5 text-sm font-medium hover:border-teal-soft hover:text-teal-soft">
+              <a href="https://wa.me/5511975691076" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border border-white/20 px-6 py-3.5 text-sm font-medium hover:border-teal-soft hover:text-teal-soft">
                 WhatsApp
               </a>
             </div>
