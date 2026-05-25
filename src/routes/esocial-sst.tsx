@@ -10,6 +10,7 @@ export const Route = createFileRoute("/esocial-sst")({
     { property: "og:type", content: "website" },
   ],
     links: [{ rel: "canonical", href: "https://dmg-protected-care.lovable.app/esocial-sst" }],
+    scripts: [{ type: "application/ld+json", children: "{\"@context\": \"https://schema.org\", \"@type\": \"Service\", \"name\": \"eSocial SST\", \"description\": \"Envio dos eventos S-2210, S-2220 e S-2240 dentro do prazo legal, evitando multas e inconsist\u00eancias cadastrais.\", \"serviceType\": \"eSocial SST\", \"provider\": {\"@id\": \"https://dmg-protected-care.lovable.app/#business\"}, \"areaServed\": [{\"@type\": \"City\", \"name\": \"Osasco\"}, {\"@type\": \"City\", \"name\": \"Itapevi\"}, {\"@type\": \"City\", \"name\": \"Cajamar\"}, {\"@type\": \"City\", \"name\": \"Carapicu\u00edba\"}], \"url\": \"https://dmg-protected-care.lovable.app/esocial-sst\"}" }],
   }),
   component: () => (
     <InnerPage

@@ -10,6 +10,7 @@ export const Route = createFileRoute("/protecao-empresarial-sst")({
     { property: "og:type", content: "website" },
   ],
     links: [{ rel: "canonical", href: "https://dmg-protected-care.lovable.app/protecao-empresarial-sst" }],
+    scripts: [{ type: "application/ld+json", children: "{\"@context\": \"https://schema.org\", \"@type\": \"Service\", \"name\": \"Prote\u00e7\u00e3o Empresarial em SST\", \"description\": \"Assessoria cont\u00ednua para redu\u00e7\u00e3o de FAP, passivos trabalhistas e exposi\u00e7\u00e3o a multas em fiscaliza\u00e7\u00f5es.\", \"serviceType\": \"Prote\u00e7\u00e3o Empresarial em SST\", \"provider\": {\"@id\": \"https://dmg-protected-care.lovable.app/#business\"}, \"areaServed\": [{\"@type\": \"City\", \"name\": \"Osasco\"}, {\"@type\": \"City\", \"name\": \"Itapevi\"}, {\"@type\": \"City\", \"name\": \"Cajamar\"}, {\"@type\": \"City\", \"name\": \"Carapicu\u00edba\"}], \"url\": \"https://dmg-protected-care.lovable.app/protecao-empresarial-sst\"}" }],
   }),
   component: () => (
     <InnerPage

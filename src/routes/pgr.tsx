@@ -10,6 +10,7 @@ export const Route = createFileRoute("/pgr")({
     { property: "og:type", content: "website" },
   ],
     links: [{ rel: "canonical", href: "https://dmg-protected-care.lovable.app/pgr" }],
+    scripts: [{ type: "application/ld+json", children: "{\"@context\": \"https://schema.org\", \"@type\": \"Service\", \"name\": \"PGR \u2014 Programa de Gerenciamento de Riscos\", \"description\": \"Invent\u00e1rio de riscos, plano de a\u00e7\u00e3o e gest\u00e3o do PGR conforme NR-1 para empresas em Osasco e regi\u00e3o.\", \"serviceType\": \"PGR \u2014 Programa de Gerenciamento de Riscos\", \"provider\": {\"@id\": \"https://dmg-protected-care.lovable.app/#business\"}, \"areaServed\": [{\"@type\": \"City\", \"name\": \"Osasco\"}, {\"@type\": \"City\", \"name\": \"Itapevi\"}, {\"@type\": \"City\", \"name\": \"Cajamar\"}, {\"@type\": \"City\", \"name\": \"Carapicu\u00edba\"}], \"url\": \"https://dmg-protected-care.lovable.app/pgr\"}" }],
   }),
   component: () => (
     <InnerPage
