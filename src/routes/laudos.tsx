@@ -2,10 +2,15 @@ import { createFileRoute } from "@tanstack/react-router";
 import { InnerPage } from "@/components/dmg/InnerPage";
 
 export const Route = createFileRoute("/laudos")({
-  head: () => ({ meta: [
+  head: () => ({
+    meta: [
     { title: "Laudos Técnicos: LTCAT, Insalubridade, Periculosidade e Ergonômico | DMG" },
     { name: "description", content: "Laudos técnicos em SST emitidos com rigor médico e de engenharia de segurança." },
-  ]}),
+    { property: "og:url", content: "https://dmg-protected-care.lovable.app/laudos" },
+    { property: "og:type", content: "website" },
+  ],
+    links: [{ rel: "canonical", href: "https://dmg-protected-care.lovable.app/laudos" }],
+  }),
   component: () => (
     <InnerPage
       eyebrow="Laudos Técnicos"

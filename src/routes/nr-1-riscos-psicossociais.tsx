@@ -2,10 +2,15 @@ import { createFileRoute } from "@tanstack/react-router";
 import { InnerPage } from "@/components/dmg/InnerPage";
 
 export const Route = createFileRoute("/nr-1-riscos-psicossociais")({
-  head: () => ({ meta: [
+  head: () => ({
+    meta: [
     { title: "NR-1 e Riscos Psicossociais | DMG Ocupacional" },
     { name: "description", content: "Adequação à NR-1: identificação, avaliação e integração dos riscos psicossociais ao PGR." },
-  ]}),
+    { property: "og:url", content: "https://dmg-protected-care.lovable.app/nr-1-riscos-psicossociais" },
+    { property: "og:type", content: "website" },
+  ],
+    links: [{ rel: "canonical", href: "https://dmg-protected-care.lovable.app/nr-1-riscos-psicossociais" }],
+  }),
   component: () => (
     <InnerPage
       eyebrow="NR-1 · Psicossociais"

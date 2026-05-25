@@ -2,10 +2,15 @@ import { createFileRoute } from "@tanstack/react-router";
 import { InnerPage } from "@/components/dmg/InnerPage";
 
 export const Route = createFileRoute("/medicina-do-trabalho")({
-  head: () => ({ meta: [
+  head: () => ({
+    meta: [
     { title: "Medicina do Trabalho em Franca-SP | DMG Ocupacional" },
     { name: "description", content: "Coordenação médica, ASO, PCMSO e gestão integrada de saúde ocupacional para empresas em Franca-SP." },
-  ]}),
+    { property: "og:url", content: "https://dmg-protected-care.lovable.app/medicina-do-trabalho" },
+    { property: "og:type", content: "website" },
+  ],
+    links: [{ rel: "canonical", href: "https://dmg-protected-care.lovable.app/medicina-do-trabalho" }],
+  }),
   component: () => (
     <InnerPage
       eyebrow="Medicina do Trabalho"

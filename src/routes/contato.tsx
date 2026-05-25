@@ -4,10 +4,15 @@ import { FinalCTA } from "@/components/dmg/sections";
 import { MapPin, Phone, Mail, Clock, MessageCircle, ArrowRight } from "lucide-react";
 
 export const Route = createFileRoute("/contato")({
-  head: () => ({ meta: [
+  head: () => ({
+    meta: [
     { title: "Contato | DMG Ocupacional — Franca-SP" },
     { name: "description", content: "Fale com a DMG Ocupacional: medicina do trabalho, PCMSO, PGR e eSocial SST em Franca-SP." },
-  ]}),
+    { property: "og:url", content: "https://dmg-protected-care.lovable.app/contato" },
+    { property: "og:type", content: "website" },
+  ],
+    links: [{ rel: "canonical", href: "https://dmg-protected-care.lovable.app/contato" }],
+  }),
   component: Contato,
 });
 

@@ -2,10 +2,15 @@ import { createFileRoute } from "@tanstack/react-router";
 import { InnerPage } from "@/components/dmg/InnerPage";
 
 export const Route = createFileRoute("/esocial-sst")({
-  head: () => ({ meta: [
+  head: () => ({
+    meta: [
     { title: "eSocial SST — S-2210, S-2220 e S-2240 | DMG Ocupacional" },
     { name: "description", content: "Envio correto e dentro do prazo dos eventos de SST no eSocial." },
-  ]}),
+    { property: "og:url", content: "https://dmg-protected-care.lovable.app/esocial-sst" },
+    { property: "og:type", content: "website" },
+  ],
+    links: [{ rel: "canonical", href: "https://dmg-protected-care.lovable.app/esocial-sst" }],
+  }),
   component: () => (
     <InnerPage
       eyebrow="eSocial SST"

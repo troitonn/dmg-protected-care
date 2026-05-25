@@ -2,10 +2,15 @@ import { createFileRoute } from "@tanstack/react-router";
 import { InnerPage } from "@/components/dmg/InnerPage";
 
 export const Route = createFileRoute("/treinamentos-nr")({
-  head: () => ({ meta: [
+  head: () => ({
+    meta: [
     { title: "Treinamentos NR | DMG Ocupacional" },
     { name: "description", content: "Capacitações obrigatórias em normas regulamentadoras com registro e validade legal." },
-  ]}),
+    { property: "og:url", content: "https://dmg-protected-care.lovable.app/treinamentos-nr" },
+    { property: "og:type", content: "website" },
+  ],
+    links: [{ rel: "canonical", href: "https://dmg-protected-care.lovable.app/treinamentos-nr" }],
+  }),
   component: () => (
     <InnerPage
       eyebrow="Treinamentos NR"

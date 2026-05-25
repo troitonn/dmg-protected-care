@@ -2,10 +2,15 @@ import { createFileRoute } from "@tanstack/react-router";
 import { InnerPage } from "@/components/dmg/InnerPage";
 
 export const Route = createFileRoute("/pcmso")({
-  head: () => ({ meta: [
+  head: () => ({
+    meta: [
     { title: "PCMSO — Programa de Controle Médico de Saúde Ocupacional | DMG" },
     { name: "description", content: "PCMSO técnico, auditável e alinhado ao PGR para empresas em Franca-SP." },
-  ]}),
+    { property: "og:url", content: "https://dmg-protected-care.lovable.app/pcmso" },
+    { property: "og:type", content: "website" },
+  ],
+    links: [{ rel: "canonical", href: "https://dmg-protected-care.lovable.app/pcmso" }],
+  }),
   component: () => (
     <InnerPage
       eyebrow="PCMSO"

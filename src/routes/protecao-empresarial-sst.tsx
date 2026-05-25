@@ -2,10 +2,15 @@ import { createFileRoute } from "@tanstack/react-router";
 import { InnerPage } from "@/components/dmg/InnerPage";
 
 export const Route = createFileRoute("/protecao-empresarial-sst")({
-  head: () => ({ meta: [
+  head: () => ({
+    meta: [
     { title: "Proteção Empresarial em SST | DMG Ocupacional" },
     { name: "description", content: "Consultoria estratégica em SST para reduzir passivos e proteger a operação." },
-  ]}),
+    { property: "og:url", content: "https://dmg-protected-care.lovable.app/protecao-empresarial-sst" },
+    { property: "og:type", content: "website" },
+  ],
+    links: [{ rel: "canonical", href: "https://dmg-protected-care.lovable.app/protecao-empresarial-sst" }],
+  }),
   component: () => (
     <InnerPage
       eyebrow="Proteção Empresarial"

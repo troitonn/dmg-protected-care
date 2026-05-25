@@ -2,10 +2,15 @@ import { createFileRoute } from "@tanstack/react-router";
 import { InnerPage } from "@/components/dmg/InnerPage";
 
 export const Route = createFileRoute("/pgr")({
-  head: () => ({ meta: [
+  head: () => ({
+    meta: [
     { title: "PGR e Gestão de Riscos Ocupacionais | DMG Ocupacional" },
     { name: "description", content: "Identificação, avaliação e controle de riscos com plano de ação documentado para sua empresa." },
-  ]}),
+    { property: "og:url", content: "https://dmg-protected-care.lovable.app/pgr" },
+    { property: "og:type", content: "website" },
+  ],
+    links: [{ rel: "canonical", href: "https://dmg-protected-care.lovable.app/pgr" }],
+  }),
   component: () => (
     <InnerPage
       eyebrow="PGR · GRO"

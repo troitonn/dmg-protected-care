@@ -2,10 +2,15 @@ import { createFileRoute } from "@tanstack/react-router";
 import { InnerPage } from "@/components/dmg/InnerPage";
 
 export const Route = createFileRoute("/sobre")({
-  head: () => ({ meta: [
+  head: () => ({
+    meta: [
     { title: "Sobre a DMG Ocupacional | Medicina do Trabalho em Franca-SP" },
     { name: "description", content: "Conheça a DMG: elo entre segurança jurídica e acolhimento humanizado em SST." },
-  ]}),
+    { property: "og:url", content: "https://dmg-protected-care.lovable.app/sobre" },
+    { property: "og:type", content: "website" },
+  ],
+    links: [{ rel: "canonical", href: "https://dmg-protected-care.lovable.app/sobre" }],
+  }),
   component: () => (
     <InnerPage
       eyebrow="Sobre"

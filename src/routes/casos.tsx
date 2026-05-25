@@ -2,10 +2,15 @@ import { createFileRoute } from "@tanstack/react-router";
 import { InnerPage } from "@/components/dmg/InnerPage";
 
 export const Route = createFileRoute("/casos")({
-  head: () => ({ meta: [
+  head: () => ({
+    meta: [
     { title: "Casos DMG | Resultados em SST para empresas" },
     { name: "description", content: "Casos anonimizados de empresas atendidas pela DMG Ocupacional." },
-  ]}),
+    { property: "og:url", content: "https://dmg-protected-care.lovable.app/casos" },
+    { property: "og:type", content: "website" },
+  ],
+    links: [{ rel: "canonical", href: "https://dmg-protected-care.lovable.app/casos" }],
+  }),
   component: () => (
     <InnerPage
       eyebrow="Casos"
