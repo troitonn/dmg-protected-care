@@ -82,7 +82,7 @@ function AdminLoginPage() {
             {mode === "signin" ? "Primeiro acesso? Criar conta" : "Já tem conta? Entrar"}
           </button>
         </div>
-        <p className="mt-6 text-center text-xs text-white/50">© DMG Ocupacional — Franca-SP</p>
+        <p className="mt-6 text-center text-xs text-white/50">© DMG Ocupacional — Osasco-SP</p>
       </div>
     </div>
   );
