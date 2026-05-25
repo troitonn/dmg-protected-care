@@ -23,7 +23,7 @@ export const Route = createFileRoute("/sobre")({
         "Documentação organizada, rastreável e auditável",
       ]}
       related={[
-        { to: "/franca-sp", label: "Atendimento em Osasco-SP" },
+        { to: "/franca-sp", label: "Atendimento em Osasco-SP e região." },
         { to: "/casos", label: "Casos" },
       ]}
     />
