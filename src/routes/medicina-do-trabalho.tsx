@@ -4,8 +4,8 @@ import { InnerPage } from "@/components/dmg/InnerPage";
 export const Route = createFileRoute("/medicina-do-trabalho")({
   head: () => ({
     meta: [
-    { title: "Medicina do Trabalho em Franca-SP | DMG Ocupacional" },
-    { name: "description", content: "Coordenação médica, ASO, PCMSO e gestão integrada de saúde ocupacional para empresas em Franca-SP." },
+    { title: "Medicina do Trabalho em Osasco-SP e região | DMG Ocupacional" },
+    { name: "description", content: "Coordenação médica, ASO, PCMSO e gestão integrada de saúde ocupacional para empresas em Osasco-SP, Itapevi, Cajamar, Carapicuíba e região." },
     { property: "og:url", content: "https://dmg-protected-care.lovable.app/medicina-do-trabalho" },
     { property: "og:type", content: "website" },
   ],
@@ -15,7 +15,7 @@ export const Route = createFileRoute("/medicina-do-trabalho")({
   component: () => (
     <InnerPage
       eyebrow="Medicina do Trabalho"
-      title="Medicina do trabalho completa para empresas em Franca-SP."
+      title="Medicina do trabalho completa para empresas em Osasco-SP e região."
       summary="Coordenação médica, exames ocupacionais e gestão integrada de saúde ocupacional, com documentação técnica e foco em redução de riscos, custos e passivos trabalhistas."
       highlights={[
         "Coordenação médica responsável (PCMSO)",
@@ -27,7 +27,7 @@ export const Route = createFileRoute("/medicina-do-trabalho")({
       ]}
       faqs={[
         { q: "Quem precisa de medicina do trabalho?", a: "Toda empresa com empregados registrados em regime CLT precisa manter PCMSO, ASOs e gestão de SST atualizados." },
-        { q: "A DMG atende in company?", a: "Sim. Atendemos na clínica em Franca-SP e em modelo in company para empresas com volume e logística adequados." },
+        { q: "A DMG atende in company?", a: "Sim. Atendemos na matriz em Osasco-SP, na Clínica DIMEG, e também em modelo in company para empresas com volume e logística adequados." },
       ]}
       related={[
         { to: "/pcmso", label: "PCMSO" },
