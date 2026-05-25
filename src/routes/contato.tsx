@@ -6,8 +6,8 @@ import { MapPin, Phone, Mail, Clock, MessageCircle, ArrowRight } from "lucide-re
 export const Route = createFileRoute("/contato")({
   head: () => ({
     meta: [
-    { title: "Contato | DMG Ocupacional — Franca-SP" },
-    { name: "description", content: "Fale com a DMG Ocupacional: medicina do trabalho, PCMSO, PGR e eSocial SST em Franca-SP." },
+    { title: "Contato | DMG Ocupacional — Osasco-SP e região" },
+    { name: "description", content: "Fale com a DMG Ocupacional: medicina do trabalho, PCMSO, PGR e eSocial SST em Osasco-SP, Itapevi, Cajamar, Carapicuíba e região." },
     { property: "og:url", content: "https://dmg-protected-care.lovable.app/contato" },
     { property: "og:type", content: "website" },
   ],
@@ -37,7 +37,7 @@ function Contato() {
       <section className="bg-background py-20">
         <div className="mx-auto grid max-w-6xl gap-10 px-5 lg:grid-cols-12 lg:px-8">
           <div className="space-y-6 lg:col-span-5">
-            <InfoRow icon={MapPin} label="Endereço" value="Franca-SP — atendimento à região" />
+            <InfoRow icon={MapPin} label="Endereço" value="Osasco-SP — matriz na Clínica DIMEG; atendimento em Itapevi, Cajamar, Carapicuíba e região" />
             <InfoRow icon={Phone} label="Telefone" value="+55 11 97569-1076" />
             <InfoRow icon={Mail} label="E-mail" value="contato@dmgocupacional.com" />
             <InfoRow icon={Clock} label="Horário" value="Seg. a sex., 7h às 18h" />
