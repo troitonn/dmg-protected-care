@@ -6,13 +6,17 @@ import { supabase } from "@/integrations/supabase/client";
 import { ArrowRight } from "lucide-react";
 
 export const Route = createFileRoute("/blog")({
-  head: () => ({ meta: [
-    { title: "Blog DMG | SST, medicina do trabalho, PCMSO, PGR, NR-1 e eSocial" },
-    { name: "description", content: "Central de conhecimento DMG Ocupacional sobre PCMSO, PGR, NR-1, eSocial SST, laudos e proteção empresarial em Franca-SP." },
-    { property: "og:title", content: "Blog DMG | Central de conhecimento em SST" },
-    { property: "og:description", content: "Conteúdo técnico para RH, DP, jurídico e diretoria sobre SST e medicina do trabalho." },
-    { rel: "canonical", content: "/blog" },
-  ]}),
+  head: () => ({
+    meta: [
+      { title: "Blog DMG | SST, medicina do trabalho, PCMSO, PGR, NR-1 e eSocial" },
+      { name: "description", content: "Central de conhecimento DMG Ocupacional sobre PCMSO, PGR, NR-1, eSocial SST, laudos e proteção empresarial para empresas em Osasco e região." },
+      { property: "og:title", content: "Blog DMG | Central de conhecimento em SST" },
+      { property: "og:description", content: "Conteúdo técnico para RH, DP, jurídico e diretoria sobre SST e medicina do trabalho." },
+      { property: "og:url", content: "https://dmg-protected-care.lovable.app/blog" },
+      { property: "og:type", content: "website" },
+    ],
+    links: [{ rel: "canonical", href: "https://dmg-protected-care.lovable.app/blog" }],
+  }),
   component: BlogIndex,
 });
 
