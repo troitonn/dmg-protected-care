@@ -4,18 +4,18 @@ import { InnerPage } from "@/components/dmg/InnerPage";
 export const Route = createFileRoute("/franca-sp")({
   head: () => ({
     meta: [
-    { title: "Medicina do Trabalho em Franca-SP | DMG Ocupacional" },
-    { name: "description", content: "Clínica de medicina do trabalho em Franca-SP para indústria, comércio, serviços, agronegócio e polo calçadista." },
+    { title: "Medicina do Trabalho em Osasco-SP e região | DMG Ocupacional" },
+    { name: "description", content: "Clínica de medicina do trabalho em Osasco-SP para indústria, comércio, serviços, logística, construção civil e empresas da região oeste da Grande São Paulo." },
     { property: "og:url", content: "https://dmg-protected-care.lovable.app/franca-sp" },
     { property: "og:type", content: "website" },
   ],
-    links: [{ rel: "canonical", href: "https://dmg-protected-care.lovable.app/franca-sp" }],
+    links: [{ rel: "canonical", href: "https://dmg-protected-care.lovable.app/osasco-sp" }],
   }),
   component: () => (
     <InnerPage
-      eyebrow="Franca-SP"
-      title="Medicina do trabalho em Franca-SP para empresas que produzem todos os dias."
-      summary="A DMG Ocupacional atende empresas de Franca-SP e região com PCMSO, PGR, laudos, ASO, eSocial SST e adequações de NR — com equipe local e profundidade técnica."
+      eyebrow="Osasco-SP"
+      title="Medicina do trabalho em Osasco-SP para empresas que produzem todos os dias."
+      summary="A DMG Ocupacional atende empresas de Osasco, Itapevi, Cajamar, Carapicuíba e região com PCMSO, PGR, laudos, ASO, eSocial SST e adequações de NR — com equipe local e profundidade técnica."
       highlights={[
         "Indústria, comércio, serviços e agronegócio",
         "Polo calçadista e cadeias relacionadas",
