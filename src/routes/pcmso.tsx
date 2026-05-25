@@ -5,7 +5,7 @@ export const Route = createFileRoute("/pcmso")({
   head: () => ({
     meta: [
     { title: "PCMSO — Programa de Controle Médico de Saúde Ocupacional | DMG" },
-    { name: "description", content: "PCMSO técnico, auditável e alinhado ao PGR para empresas em Franca-SP." },
+    { name: "description", content: "PCMSO técnico, auditável e alinhado ao PGR para empresas em Osasco-SP, Itapevi, Cajamar, Carapicuíba e região." },
     { property: "og:url", content: "https://dmg-protected-care.lovable.app/pcmso" },
     { property: "og:type", content: "website" },
   ],
