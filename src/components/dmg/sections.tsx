@@ -445,7 +445,7 @@ export function LocationSection() {
 
           <ul className="mt-8 space-y-3 text-sm">
             <li className="flex items-start gap-3"><MapPin className="mt-0.5 h-4 w-4 text-teal-soft" /> Franca-SP — atendimento à região</li>
-            <li className="flex items-start gap-3"><Phone className="mt-0.5 h-4 w-4 text-teal-soft" /> (16) 0000-0000</li>
+            <li className="flex items-start gap-3"><Phone className="mt-0.5 h-4 w-4 text-teal-soft" /> +55 11 97569-1076</li>
             <li className="flex items-start gap-3"><MessageCircle className="mt-0.5 h-4 w-4 text-teal-soft" /> WhatsApp atendimento comercial</li>
           </ul>
 
