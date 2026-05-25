@@ -36,7 +36,7 @@ export function Footer() {
             ["Sobre", "/sobre"],
             ["Casos", "/casos"],
             ["Blog", "/blog"],
-            ["Franca-SP", "/franca-sp"],
+            ["Osasco-SP", "/franca-sp"],
             ["Proteção Empresarial", "/protecao-empresarial-sst"],
           ]} />
           <FooterCol title="Suporte" links={[
