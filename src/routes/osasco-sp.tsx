@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { InnerPage } from "@/components/dmg/InnerPage";
 
-export const Route = createFileRoute("/franca-sp")({
+export const Route = createFileRoute("/osasco-sp")({
   head: () => ({
     meta: [
     { title: "Medicina do Trabalho em Osasco-SP e região | DMG Ocupacional" },
