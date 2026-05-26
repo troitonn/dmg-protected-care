@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, Outlet, useMatches } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
 import { SiteLayout } from "@/components/dmg/SiteLayout";
 import { FinalCTA } from "@/components/dmg/sections";
@@ -28,6 +28,9 @@ type Post = {
 };
 
 function BlogIndex() {
+  const matches = useMatches();
+  const isSlugActive = matches.some((m) => m.routeId === "/blog/$slug");
+
   const [posts, setPosts] = useState<Post[]>([]);
   const [cats, setCats] = useState<{ id: string; name: string; slug: string }[]>([]);
   const [q, setQ] = useState("");
@@ -36,11 +39,10 @@ function BlogIndex() {
   useEffect(() => {
     supabase.from("blog_categories").select("id,name,slug").order("name").then(({ data }) => setCats(data ?? []));
     (async () => {
-      let query = supabase.from("blog_posts")
+      const { data } = await supabase.from("blog_posts")
         .select("id,title,slug,excerpt,featured_image_url,reading_time,published_at,blog_categories(name,slug),blog_authors(name)")
         .eq("status", "published")
         .order("published_at", { ascending: false });
-      const { data } = await query;
       setPosts((data as unknown as Post[]) ?? []);
     })();
   }, []);
@@ -52,6 +54,8 @@ function BlogIndex() {
 
   const featured = filtered[0];
   const rest = filtered.slice(1);
+
+  if (isSlugActive) return <Outlet />;
 
   return (
     <SiteLayout>
