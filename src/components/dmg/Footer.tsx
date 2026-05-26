@@ -50,7 +50,7 @@ export function Footer() {
           <h4 className="text-xs font-semibold uppercase tracking-[0.2em] text-teal-soft">Contato</h4>
           <p className="flex items-start gap-2"><MapPin className="mt-0.5 h-4 w-4 shrink-0 text-teal-soft" />Osasco, Itapevi, Cajamar, Carapicuíba e região</p>
           <a href="https://wa.me/5511975691076" target="_blank" rel="noopener noreferrer" className="flex items-start gap-2 hover:text-white"><Phone className="mt-0.5 h-4 w-4 shrink-0 text-teal-soft" />+55 11 97569-1076</a>
-          <a href="mailto:contato@dmgocupacional.com" className="flex items-start gap-2 hover:text-white"><Mail className="mt-0.5 h-4 w-4 shrink-0 text-teal-soft" />contato@dmgocupacional.com</a>
+          <a href="mailto:contato@dmgocupacional.com" className="flex items-start gap-2 hover:text-white"><Mail className="mt-0.5 h-4 w-4 shrink-0 text-teal-soft" />comercial@dmgocupacional.com</a>
           <p className="flex items-start gap-2"><Clock className="mt-0.5 h-4 w-4 shrink-0 text-teal-soft" />Seg. a sex., 7h às 18h</p>
         </div>
       </div>
