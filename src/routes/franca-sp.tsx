@@ -9,18 +9,19 @@ export const Route = createFileRoute("/franca-sp")({
     { property: "og:url", content: "https://dmg-protected-care.lovable.app/franca-sp" },
     { property: "og:type", content: "website" },
   ],
-    links: [{ rel: "canonical", href: "https://dmg-protected-care.lovable.app/osasco-sp" }],
+    links: [{ rel: "canonical", href: "https://dmg-protected-care.lovable.app/franca-sp" }],
   }),
   component: () => (
     <InnerPage
       eyebrow="Osasco-SP"
       title="Medicina do trabalho em Osasco-SP para empresas que produzem todos os dias."
-      summary="A DMG Ocupacional atende empresas de Osasco, Itapevi, Cajamar, Carapicuíba e região com PCMSO, PGR, laudos, ASO, eSocial SST e adequações de NR — com equipe local e profundidade técnica."
+      summary="A DMG Ocupacional possui matriz em Osasco-SP, na Clínica DIMEG, e atende empresas em Itapevi, Cajamar, Carapicuíba e cidades próximas da região metropolitana de São Paulo, com PCMSO, PGR, laudos, ASO, eSocial SST e adequações de NR."
       highlights={[
-        "Indústria, comércio, serviços e agronegócio",
-        "Polo calçadista e cadeias relacionadas",
+        "Matriz em Osasco-SP, na Clínica DIMEG",
+        "Atendimento em Itapevi, Cajamar, Carapicuíba e região",
+        "Indústria, comércio, serviços, logística, construção civil e operações administrativas",
         "Atendimento na clínica e in company",
-        "Equipe local com conhecimento da realidade produtiva",
+        "Equipe local com conhecimento da região oeste da Grande São Paulo",
       ]}
       related={[
         { to: "/medicina-do-trabalho", label: "Medicina do Trabalho" },
