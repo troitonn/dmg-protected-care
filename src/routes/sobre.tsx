@@ -9,7 +9,7 @@ export const Route = createFileRoute("/sobre")({
     { property: "og:url", content: "https://dmg-protected-care.lovable.app/sobre" },
     { property: "og:type", content: "website" },
   ],
-    links: [{ rel: "canonical", href: "https://dmg-protected-care.lovable.app/sobre" }],
+    links: [{ rel: "canonical", href: "https://dmgocupacional.com/sobre" }],
   }),
   component: () => (
     <InnerPage
