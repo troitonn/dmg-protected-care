@@ -1,4 +1,9 @@
-import { createFileRoute, Link, Outlet } from "@tanstack/react-router";
+import {
+  createFileRoute,
+  Link,
+  Outlet,
+  useMatchRoute,
+} from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
 import { AdminLayout } from "@/components/dmg/admin/AdminLayout";
 import { supabase } from "@/integrations/supabase/client";
@@ -15,9 +20,19 @@ export const Route = createFileRoute("/admin/blog")({
 });
 
 function BlogAdminPage() {
+  const matchRoute = useMatchRoute();
+
+  const isChildRoute =
+    matchRoute({ to: "/admin/blog/novo", fuzzy: true }) ||
+    matchRoute({
+      to: "/admin/blog/editar/$id",
+      fuzzy: true,
+      params: { id: "*" },
+    });
+
   return (
     <AdminLayout title="Artigos do blog">
-      <Outlet />
+      {isChildRoute ? <Outlet /> : <BlogAdminListPage />}
     </AdminLayout>
   );
 }
@@ -35,7 +50,7 @@ type Row = {
   blog_authors: { name: string } | null;
 };
 
-export function BlogAdminListPage() {
+function BlogAdminListPage() {
   const [rows, setRows] = useState<Row[]>([]);
   const [cats, setCats] = useState<{ id: string; name: string }[]>([]);
   const [q, setQ] = useState("");
@@ -143,10 +158,7 @@ export function BlogAdminListPage() {
           <tbody className="divide-y divide-border">
             {filtered.length === 0 && (
               <tr>
-                <td
-                  colSpan={6}
-                  className="px-4 py-8 text-center text-muted-foreground"
-                >
+                <td colSpan={6} className="px-4 py-8 text-center text-muted-foreground">
                   Nenhum artigo encontrado.
                 </td>
               </tr>
