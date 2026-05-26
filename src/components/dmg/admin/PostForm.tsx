@@ -108,7 +108,7 @@ export function PostForm({ postId }: { postId?: string }) {
         geo_entities: (data.geo_entities ?? []).join(", "),
         geo_questions: (data.geo_questions ?? []).join("\n"),
         geo_services: (data.geo_services ?? []).join(", "),
-        geo_locality: data.geo_locality ?? "Franca-SP",
+        geo_locality: data.geo_locality ?? "Osasco-SP e região",
         published_at: data.published_at ? data.published_at.slice(0, 16) : "",
       });
       const { data: f } = await supabase.from("blog_faqs").select("question,answer,sort_order").eq("post_id", postId).order("sort_order");
