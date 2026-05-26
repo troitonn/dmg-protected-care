@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, Outlet, useMatchRoute } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
 import { AdminLayout } from "@/components/dmg/admin/AdminLayout";
 import { supabase } from "@/integrations/supabase/client";
@@ -9,8 +9,18 @@ export const Route = createFileRoute("/admin/blog")({
     { title: "Artigos | Painel DMG" },
     { name: "robots", content: "noindex,nofollow" },
   ]}),
-  component: BlogAdminListPage,
+  component: BlogAdminPage,
 });
+
+function BlogAdminPage() {
+  const matchRoute = useMatchRoute();
+  const isSubRoute =
+    matchRoute({ to: "/admin/blog/novo" }) ||
+    matchRoute({ to: "/admin/blog/editar/$id", params: { id: "*" }, fuzzy: true });
+
+  if (isSubRoute) return <Outlet />;
+  return <BlogAdminListPage />;
+}
 
 type Row = {
   id: string;
