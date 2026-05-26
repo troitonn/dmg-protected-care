@@ -406,7 +406,7 @@ export function SocialProof() {
 
           <div className="grid gap-5 sm:grid-cols-2 lg:col-span-7">
             {[
-              { name: "Camila R.", role: "RH · Indústria calçadista", text: "A DMG estruturou nosso PGR e o eSocial SST em 60 dias. Reduzimos autuações e ganhamos previsibilidade." },
+              { name: "Camila R.", role: "RH · Indústria", text: "A DMG estruturou nosso PGR e o eSocial SST em 60 dias. Reduzimos autuações e ganhamos previsibilidade." },
               { name: "Eduardo M.", role: "Diretor · Logística", text: "Atendimento técnico e humano. A adequação à NR-1 foi conduzida com profundidade, sem burocracia desnecessária." },
             ].map(t => (
               <figure key={t.name} className="relative rounded-3xl border border-border bg-card p-7">
