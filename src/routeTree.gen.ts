@@ -129,7 +129,7 @@ const AdminIndexRoute = AdminIndexRouteImport.update({
 } as any)
 const BlogSlugRoute = BlogSlugRouteImport.update({
   id: '/$slug',
-  path: ':$slug',
+  path: '/$slug',
   getParentRoute: () => BlogRoute,
 } as any)
 const AdminSeoRoute = AdminSeoRouteImport.update({
