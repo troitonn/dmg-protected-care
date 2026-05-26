@@ -18,7 +18,7 @@ type Post = {
 };
 type Faq = { question: string; answer: string };
 
-export const Route = createFileRoute("/blog/$slug")({
+export const Route = createFileRoute("/blog/:slug")({
   loader: async ({ params }) => {
     const { data } = await supabase
       .from("blog_posts")
