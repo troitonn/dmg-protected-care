@@ -44,7 +44,7 @@ export function Hero() {
 
           <dl className="mt-12 grid max-w-xl grid-cols-3 gap-6 border-t border-white/10 pt-7">
             {[
-              ["+15", "anos de SST"],
+              ["+25", "anos de SST"],
               ["100%", "conformidade legal"],
               ["Osasco", "e região"],
             ].map(([k, v]) => (
@@ -442,7 +442,7 @@ export function LocationSection() {
           </p>
 
           <ul className="mt-8 space-y-3 text-sm">
-            <li className="flex items-start gap-3"><MapPin className="mt-0.5 h-4 w-4 text-teal-soft" /> Osasco-SP — matriz na Clínica DIMEGo</li>
+            <li className="flex items-start gap-3"><MapPin className="mt-0.5 h-4 w-4 text-teal-soft" /> Osasco-SP — matriz na Clínica DIMEG</li>
             <li className="flex items-start gap-3"><Phone className="mt-0.5 h-4 w-4 text-teal-soft" /> +55 11 97569-1076</li>
             <li className="flex items-start gap-3"><MessageCircle className="mt-0.5 h-4 w-4 text-teal-soft" /> WhatsApp atendimento comercial</li>
           </ul>
@@ -451,7 +451,7 @@ export function LocationSection() {
             <a href="https://wa.me/5511975691076" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full bg-teal-soft px-6 py-3.5 text-sm font-semibold text-petrol-ink hover:bg-white">
               Falar pelo WhatsApp <ArrowRight className="h-4 w-4" />
             </a>
-            <Link to="/franca-sp" className="inline-flex items-center gap-2 rounded-full border border-white/20 px-6 py-3.5 text-sm font-medium hover:border-teal-soft hover:text-teal-soft">
+            <Link to="/osasco-sp" className="inline-flex items-center gap-2 rounded-full border border-white/20 px-6 py-3.5 text-sm font-medium hover:border-teal-soft hover:text-teal-soft">
               Atendimento em Osasco e região
             </Link>
           </div>
