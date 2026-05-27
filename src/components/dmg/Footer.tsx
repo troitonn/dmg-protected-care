@@ -60,7 +60,7 @@ export function Footer() {
           <p>© {new Date().getFullYear()} DMG Ocupacional · Medicina e segurança do trabalho · Osasco / Grande São Paulo</p>
           <div className="flex gap-5">
             <a href="#" className="hover:text-white">Política de privacidade</a>
-            <a href="#" className="hover:text-white">Google Business</a>
+            <a href="https://share.google/GLecgKN04BaxgfLmP" className="hover:text-white">Google Business</a>
           </div>
         </div>
       </div>
