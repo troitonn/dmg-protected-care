@@ -6,10 +6,10 @@ export const Route = createFileRoute("/area-do-cliente")({
     meta: [
     { title: "Área do Cliente | DMG Ocupacional" },
     { name: "description", content: "Acesso a documentos, laudos e indicadores de SST." },
-    { property: "og:url", content: "https://dmg-protected-care.lovable.app/area-do-cliente" },
+    { property: "og:url", content: "https://dmgocupacional.com/area-do-cliente" },
     { property: "og:type", content: "website" },
   ],
-    links: [{ rel: "canonical", href: "https://dmg-protected-care.lovable.app/area-do-cliente" }],
+    links: [{ rel: "canonical", href: "https://dmgocupacional.com/area-do-cliente" }],
   }),
   component: () => (
     <InnerPage

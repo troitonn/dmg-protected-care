@@ -19,7 +19,7 @@ import { Route as PcmsoRouteImport } from './routes/pcmso'
 import { Route as Nr1RiscosPsicossociaisRouteImport } from './routes/nr-1-riscos-psicossociais'
 import { Route as MedicinaDoTrabalhoRouteImport } from './routes/medicina-do-trabalho'
 import { Route as LaudosRouteImport } from './routes/laudos'
-import { Route as FrancaSpRouteImport } from './routes/franca-sp'
+import { Route as osascoSpRouteImport } from './routes/osasco-sp'
 import { Route as EsocialSstRouteImport } from './routes/esocial-sst'
 import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as CasosRouteImport } from './routes/casos'
@@ -87,9 +87,9 @@ const LaudosRoute = LaudosRouteImport.update({
   path: '/laudos',
   getParentRoute: () => rootRouteImport,
 } as any)
-const FrancaSpRoute = FrancaSpRouteImport.update({
-  id: '/franca-sp',
-  path: '/franca-sp',
+const osascoSpRoute = osascoSpRouteImport.update({
+  id: '/osasco-sp',
+  path: '/osasco-sp',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EsocialSstRoute = EsocialSstRouteImport.update({
@@ -180,7 +180,7 @@ export interface FileRoutesByFullPath {
   '/casos': typeof CasosRoute
   '/contato': typeof ContatoRoute
   '/esocial-sst': typeof EsocialSstRoute
-  '/franca-sp': typeof FrancaSpRoute
+  '/osasco-sp': typeof osascoSpRoute
   '/laudos': typeof LaudosRoute
   '/medicina-do-trabalho': typeof MedicinaDoTrabalhoRoute
   '/nr-1-riscos-psicossociais': typeof Nr1RiscosPsicossociaisRoute
@@ -209,7 +209,7 @@ export interface FileRoutesByTo {
   '/casos': typeof CasosRoute
   '/contato': typeof ContatoRoute
   '/esocial-sst': typeof EsocialSstRoute
-  '/franca-sp': typeof FrancaSpRoute
+  '/osasco-sp': typeof osascoSpRoute
   '/laudos': typeof LaudosRoute
   '/medicina-do-trabalho': typeof MedicinaDoTrabalhoRoute
   '/nr-1-riscos-psicossociais': typeof Nr1RiscosPsicossociaisRoute
@@ -239,7 +239,7 @@ export interface FileRoutesById {
   '/casos': typeof CasosRoute
   '/contato': typeof ContatoRoute
   '/esocial-sst': typeof EsocialSstRoute
-  '/franca-sp': typeof FrancaSpRoute
+  '/osasco-sp': typeof osascoSpRoute
   '/laudos': typeof LaudosRoute
   '/medicina-do-trabalho': typeof MedicinaDoTrabalhoRoute
   '/nr-1-riscos-psicossociais': typeof Nr1RiscosPsicossociaisRoute
@@ -270,7 +270,7 @@ export interface FileRouteTypes {
     | '/casos'
     | '/contato'
     | '/esocial-sst'
-    | '/franca-sp'
+    | '/osasco-sp'
     | '/laudos'
     | '/medicina-do-trabalho'
     | '/nr-1-riscos-psicossociais'
@@ -299,7 +299,7 @@ export interface FileRouteTypes {
     | '/casos'
     | '/contato'
     | '/esocial-sst'
-    | '/franca-sp'
+    | '/osasco-sp'
     | '/laudos'
     | '/medicina-do-trabalho'
     | '/nr-1-riscos-psicossociais'
@@ -328,7 +328,7 @@ export interface FileRouteTypes {
     | '/casos'
     | '/contato'
     | '/esocial-sst'
-    | '/franca-sp'
+    | '/osasco-sp'
     | '/laudos'
     | '/medicina-do-trabalho'
     | '/nr-1-riscos-psicossociais'
@@ -358,7 +358,7 @@ export interface RootRouteChildren {
   CasosRoute: typeof CasosRoute
   ContatoRoute: typeof ContatoRoute
   EsocialSstRoute: typeof EsocialSstRoute
-  FrancaSpRoute: typeof FrancaSpRoute
+  osascoSpRoute: typeof osascoSpRoute
   LaudosRoute: typeof LaudosRoute
   MedicinaDoTrabalhoRoute: typeof MedicinaDoTrabalhoRoute
   Nr1RiscosPsicossociaisRoute: typeof Nr1RiscosPsicossociaisRoute
@@ -450,11 +450,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LaudosRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/franca-sp': {
-      id: '/franca-sp'
-      path: '/franca-sp'
-      fullPath: '/franca-sp'
-      preLoaderRoute: typeof FrancaSpRouteImport
+    '/osasco-sp': {
+      id: '/osasco-sp'
+      path: '/osasco-sp'
+      fullPath: '/osasco-sp'
+      preLoaderRoute: typeof osascoSpRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/esocial-sst': {
@@ -603,7 +603,7 @@ const rootRouteChildren: RootRouteChildren = {
   CasosRoute: CasosRoute,
   ContatoRoute: ContatoRoute,
   EsocialSstRoute: EsocialSstRoute,
-  FrancaSpRoute: FrancaSpRoute,
+  osascoSpRoute: osascoSpRoute,
   LaudosRoute: LaudosRoute,
   MedicinaDoTrabalhoRoute: MedicinaDoTrabalhoRoute,
   Nr1RiscosPsicossociaisRoute: Nr1RiscosPsicossociaisRoute,

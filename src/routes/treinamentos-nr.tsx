@@ -6,11 +6,11 @@ export const Route = createFileRoute("/treinamentos-nr")({
     meta: [
     { title: "Treinamentos NR | DMG Ocupacional" },
     { name: "description", content: "Capacitações obrigatórias em normas regulamentadoras com registro e validade legal." },
-    { property: "og:url", content: "https://dmg-protected-care.lovable.app/treinamentos-nr" },
+    { property: "og:url", content: "https://dmgocupacional.com/treinamentos-nr" },
     { property: "og:type", content: "website" },
   ],
-    links: [{ rel: "canonical", href: "https://dmg-protected-care.lovable.app/treinamentos-nr" }],
-    scripts: [{ type: "application/ld+json", children: "{\"@context\": \"https://schema.org\", \"@type\": \"Service\", \"name\": \"Treinamentos NR\", \"description\": \"Treinamentos das NRs presenciais e in company: NR-5, NR-6, NR-10, NR-12, NR-17, NR-20, NR-33 e NR-35.\", \"serviceType\": \"Treinamentos NR\", \"provider\": {\"@id\": \"https://dmg-protected-care.lovable.app/#business\"}, \"areaServed\": [{\"@type\": \"City\", \"name\": \"Osasco\"}, {\"@type\": \"City\", \"name\": \"Itapevi\"}, {\"@type\": \"City\", \"name\": \"Cajamar\"}, {\"@type\": \"City\", \"name\": \"Carapicu\u00edba\"}], \"url\": \"https://dmg-protected-care.lovable.app/treinamentos-nr\"}" }],
+    links: [{ rel: "canonical", href: "https://dmgocupacional.com/treinamentos-nr" }],
+    scripts: [{ type: "application/ld+json", children: "{\"@context\": \"https://schema.org\", \"@type\": \"Service\", \"name\": \"Treinamentos NR\", \"description\": \"Treinamentos das NRs presenciais e in company: NR-5, NR-6, NR-10, NR-12, NR-17, NR-20, NR-33 e NR-35.\", \"serviceType\": \"Treinamentos NR\", \"provider\": {\"@id\": \"https://dmgocupacional.com/#business\"}, \"areaServed\": [{\"@type\": \"City\", \"name\": \"Osasco\"}, {\"@type\": \"City\", \"name\": \"Itapevi\"}, {\"@type\": \"City\", \"name\": \"Cajamar\"}, {\"@type\": \"City\", \"name\": \"Carapicu\u00edba\"}], \"url\": \"https://dmgocupacional.com/treinamentos-nr\"}" }],
   }),
   component: () => (
     <InnerPage

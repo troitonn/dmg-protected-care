@@ -11,7 +11,7 @@ export const Route = createFileRoute("/sitemap.xml")({
         const staticPaths = [
           "/", "/medicina-do-trabalho", "/pcmso", "/pgr", "/laudos", "/esocial-sst",
           "/nr-1-riscos-psicossociais", "/treinamentos-nr", "/protecao-empresarial-sst",
-          "/franca-sp", "/sobre", "/contato", "/blog", "/casos", "/perguntas-frequentes",
+          "/osasco-sp", "/sobre", "/contato", "/blog", "/casos", "/perguntas-frequentes",
         ];
 
         let posts: { slug: string; updated_at: string }[] = [];
