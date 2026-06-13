@@ -1,5 +1,5 @@
-import fullColor from "@/assets/dmg-full-color.png.asset.json";
-import fullBranco from "@/assets/dmg-full-branco.png.asset.json";
+import fullColor from "@/assets/dmg-full-color.png";
+import fullBranco from "@/assets/dmg-full-branco.png";
 
 type Variant = "default" | "light" | "dark";
 
@@ -12,7 +12,7 @@ export function DmgLogo({
   variant?: Variant;
   title?: string;
 }) {
-  const src = variant === "light" ? fullBranco.url : fullColor.url;
+  const src = variant === "light" ? fullBranco : fullColor;
   return (
     <img
       src={src}
