@@ -13,19 +13,19 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "Medicina e segurança do trabalho para empresas em Osasco, Itapevi, Cajamar, Carapicuíba e região metropolitana de São Paulo. PCMSO, PGR, laudos, eSocial SST e NR-1." },
       { property: "og:title", content: "DMG Ocupacional — Medicina do Trabalho na Grande São Paulo" },
       { property: "og:description", content: "Elo entre segurança jurídica e acolhimento humanizado. Proteção empresarial em SST." },
-      { property: "og:url", content: "https://dmg-protected-care.lovable.app/" },
+      { property: "og:url", content: "https://dmgocupacional.com/" },
       { property: "og:type", content: "website" },
     ],
-    links: [{ rel: "canonical", href: "https://dmg-protected-care.lovable.app/" }],
+    links: [{ rel: "canonical", href: "https://dmgocupacional.com/" }],
     scripts: [
       {
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": ["MedicalClinic", "LocalBusiness"],
-          "@id": "https://dmg-protected-care.lovable.app/#business",
+          "@id": "https://dmgocupacional.com/#business",
           name: "DMG Ocupacional",
-          url: "https://dmg-protected-care.lovable.app/",
+          url: "https://dmgocupacional.com/",
           description: "Clínica de medicina e segurança do trabalho para empresas em Osasco, Itapevi, Cajamar, Carapicuíba e região metropolitana de São Paulo.",
           address: { "@type": "PostalAddress", addressLocality: "Osasco", addressRegion: "SP", addressCountry: "BR" },
           areaServed: [

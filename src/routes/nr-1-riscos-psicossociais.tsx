@@ -6,11 +6,11 @@ export const Route = createFileRoute("/nr-1-riscos-psicossociais")({
     meta: [
     { title: "NR-1 e Riscos Psicossociais | DMG Ocupacional" },
     { name: "description", content: "Adequação à NR-1: identificação, avaliação e integração dos riscos psicossociais ao PGR." },
-    { property: "og:url", content: "https://dmg-protected-care.lovable.app/nr-1-riscos-psicossociais" },
+    { property: "og:url", content: "https://dmgocupacional.com/nr-1-riscos-psicossociais" },
     { property: "og:type", content: "website" },
   ],
-    links: [{ rel: "canonical", href: "https://dmg-protected-care.lovable.app/nr-1-riscos-psicossociais" }],
-    scripts: [{ type: "application/ld+json", children: "{\"@context\": \"https://schema.org\", \"@type\": \"Service\", \"name\": \"NR-1 \u2014 Riscos Psicossociais\", \"description\": \"Avalia\u00e7\u00e3o e gest\u00e3o de riscos psicossociais conforme a atualiza\u00e7\u00e3o da NR-1, com instrumentos validados e plano de a\u00e7\u00e3o.\", \"serviceType\": \"NR-1 \u2014 Riscos Psicossociais\", \"provider\": {\"@id\": \"https://dmg-protected-care.lovable.app/#business\"}, \"areaServed\": [{\"@type\": \"City\", \"name\": \"Osasco\"}, {\"@type\": \"City\", \"name\": \"Itapevi\"}, {\"@type\": \"City\", \"name\": \"Cajamar\"}, {\"@type\": \"City\", \"name\": \"Carapicu\u00edba\"}], \"url\": \"https://dmg-protected-care.lovable.app/nr-1-riscos-psicossociais\"}" }],
+    links: [{ rel: "canonical", href: "https://dmgocupacional.com/nr-1-riscos-psicossociais" }],
+    scripts: [{ type: "application/ld+json", children: "{\"@context\": \"https://schema.org\", \"@type\": \"Service\", \"name\": \"NR-1 \u2014 Riscos Psicossociais\", \"description\": \"Avalia\u00e7\u00e3o e gest\u00e3o de riscos psicossociais conforme a atualiza\u00e7\u00e3o da NR-1, com instrumentos validados e plano de a\u00e7\u00e3o.\", \"serviceType\": \"NR-1 \u2014 Riscos Psicossociais\", \"provider\": {\"@id\": \"https://dmgocupacional.com/#business\"}, \"areaServed\": [{\"@type\": \"City\", \"name\": \"Osasco\"}, {\"@type\": \"City\", \"name\": \"Itapevi\"}, {\"@type\": \"City\", \"name\": \"Cajamar\"}, {\"@type\": \"City\", \"name\": \"Carapicu\u00edba\"}], \"url\": \"https://dmgocupacional.com/nr-1-riscos-psicossociais\"}" }],
   }),
   component: () => (
     <InnerPage

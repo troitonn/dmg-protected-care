@@ -78,7 +78,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "alternate", hrefLang: "pt-BR", href: "https://dmg-protected-care.lovable.app/" },
+      { rel: "alternate", hrefLang: "pt-BR", href: "https://dmgocupacional.com/" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap" },
@@ -90,10 +90,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Organization",
-          "@id": "https://dmg-protected-care.lovable.app/#org",
+          "@id": "https://dmgocupacional.com/#org",
           name: "DMG Ocupacional",
-          url: "https://dmg-protected-care.lovable.app/",
-          logo: "https://dmg-protected-care.lovable.app/favicon.ico",
+          url: "https://dmgocupacional.com/",
+          logo: "https://dmgocupacional.com/favicon.ico",
           email: "contato@dmgocupacional.com",
           telephone: "+55-11-97569-1076",
           areaServed: "Região Metropolitana de São Paulo",

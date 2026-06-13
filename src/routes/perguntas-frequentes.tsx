@@ -13,12 +13,12 @@ export const Route = createFileRoute("/perguntas-frequentes")({
     meta: [
     { title: "Perguntas frequentes | DMG Ocupacional" },
     { name: "description", content: "Dúvidas comuns sobre medicina do trabalho, PCMSO, PGR, eSocial SST e NR-1." },
-    { property: "og:url", content: "https://dmg-protected-care.lovable.app/perguntas-frequentes" },
+    { property: "og:url", content: "https://dmgocupacional.com/perguntas-frequentes" },
     { property: "og:type", content: "website" },
   ],
     links: [
-      { rel: "canonical", href: "https://dmg-protected-care.lovable.app/perguntas-frequentes" },
-      { rel: "alternate", hrefLang: "pt-BR", href: "https://dmg-protected-care.lovable.app/perguntas-frequentes" },
+      { rel: "canonical", href: "https://dmgocupacional.com/perguntas-frequentes" },
+      { rel: "alternate", hrefLang: "pt-BR", href: "https://dmgocupacional.com/perguntas-frequentes" },
     ],
     scripts: [{
       type: "application/ld+json",
