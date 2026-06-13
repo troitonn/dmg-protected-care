@@ -6,7 +6,7 @@ export const Route = createFileRoute("/sobre")({
     meta: [
     { title: "Sobre a DMG Ocupacional | Medicina do Trabalho em Osasco-SP e região" },
     { name: "description", content: "Conheça a DMG: elo entre segurança jurídica e acolhimento humanizado em SST." },
-    { property: "og:url", content: "https://dmgocupacional.com/sobre" },
+    { property: "og:url", content: "https://dmg-protected-care.lovable.app/sobre" },
     { property: "og:type", content: "website" },
   ],
     links: [{ rel: "canonical", href: "https://dmgocupacional.com/sobre" }],

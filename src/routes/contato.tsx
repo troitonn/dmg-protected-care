@@ -8,10 +8,10 @@ export const Route = createFileRoute("/contato")({
     meta: [
     { title: "Contato | DMG Ocupacional — Osasco-SP e região" },
     { name: "description", content: "Fale com a DMG Ocupacional: medicina do trabalho, PCMSO, PGR e eSocial SST em Osasco-SP, Itapevi, Cajamar, Carapicuíba e região." },
-    { property: "og:url", content: "https://dmgocupacional.com/contato" },
+    { property: "og:url", content: "https://dmg-protected-care.lovable.app/contato" },
     { property: "og:type", content: "website" },
   ],
-    links: [{ rel: "canonical", href: "https://dmgocupacional.com/contato" }],
+    links: [{ rel: "canonical", href: "https://dmg-protected-care.lovable.app/contato" }],
   }),
   component: Contato,
 });

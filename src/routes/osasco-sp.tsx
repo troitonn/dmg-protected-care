@@ -6,10 +6,10 @@ export const Route = createFileRoute("/osasco-sp")({
     meta: [
     { title: "Medicina do Trabalho em Osasco-SP e região | DMG Ocupacional" },
     { name: "description", content: "Clínica de medicina do trabalho em Osasco-SP para indústria, comércio, serviços, logística, construção civil e empresas da região oeste da Grande São Paulo." },
-    { property: "og:url", content: "https://dmgocupacional.com/osasco-sp" },
+    { property: "og:url", content: "https://dmg-protected-care.lovable.app/franca-sp" },
     { property: "og:type", content: "website" },
   ],
-    links: [{ rel: "canonical", href: "https://dmgocupacional.com/osasco-sp" }],
+    links: [{ rel: "canonical", href: "https://dmg-protected-care.lovable.app/franca-sp" }],
   }),
   component: () => (
     <InnerPage

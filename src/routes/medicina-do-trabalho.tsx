@@ -6,11 +6,11 @@ export const Route = createFileRoute("/medicina-do-trabalho")({
     meta: [
     { title: "Medicina do Trabalho em Osasco-SP e região | DMG Ocupacional" },
     { name: "description", content: "Coordenação médica, ASO, PCMSO e gestão integrada de saúde ocupacional para empresas em Osasco-SP, Itapevi, Cajamar, Carapicuíba e região." },
-    { property: "og:url", content: "https://dmgocupacional.com/medicina-do-trabalho" },
+    { property: "og:url", content: "https://dmg-protected-care.lovable.app/medicina-do-trabalho" },
     { property: "og:type", content: "website" },
   ],
-    links: [{ rel: "canonical", href: "https://dmgocupacional.com/medicina-do-trabalho" }],
-    scripts: [{ type: "application/ld+json", children: "{\"@context\": \"https://schema.org\", \"@type\": \"Service\", \"name\": \"Medicina do Trabalho\", \"description\": \"Coordena\u00e7\u00e3o m\u00e9dica, ASO admissional, peri\u00f3dico, demissional e de retorno ao trabalho para empresas na Grande S\u00e3o Paulo.\", \"serviceType\": \"Medicina do Trabalho\", \"provider\": {\"@id\": \"https://dmgocupacional.com/#business\"}, \"areaServed\": [{\"@type\": \"City\", \"name\": \"Osasco\"}, {\"@type\": \"City\", \"name\": \"Itapevi\"}, {\"@type\": \"City\", \"name\": \"Cajamar\"}, {\"@type\": \"City\", \"name\": \"Carapicu\u00edba\"}], \"url\": \"https://dmgocupacional.com/medicina-do-trabalho\"}" }],
+    links: [{ rel: "canonical", href: "https://dmg-protected-care.lovable.app/medicina-do-trabalho" }],
+    scripts: [{ type: "application/ld+json", children: "{\"@context\": \"https://schema.org\", \"@type\": \"Service\", \"name\": \"Medicina do Trabalho\", \"description\": \"Coordena\u00e7\u00e3o m\u00e9dica, ASO admissional, peri\u00f3dico, demissional e de retorno ao trabalho para empresas na Grande S\u00e3o Paulo.\", \"serviceType\": \"Medicina do Trabalho\", \"provider\": {\"@id\": \"https://dmg-protected-care.lovable.app/#business\"}, \"areaServed\": [{\"@type\": \"City\", \"name\": \"Osasco\"}, {\"@type\": \"City\", \"name\": \"Itapevi\"}, {\"@type\": \"City\", \"name\": \"Cajamar\"}, {\"@type\": \"City\", \"name\": \"Carapicu\u00edba\"}], \"url\": \"https://dmg-protected-care.lovable.app/medicina-do-trabalho\"}" }],
   }),
   component: () => (
     <InnerPage

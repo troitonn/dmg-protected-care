@@ -16,10 +16,10 @@ import { Route as ProtecaoEmpresarialSstRouteImport } from './routes/protecao-em
 import { Route as PgrRouteImport } from './routes/pgr'
 import { Route as PerguntasFrequentesRouteImport } from './routes/perguntas-frequentes'
 import { Route as PcmsoRouteImport } from './routes/pcmso'
+import { Route as OsascoSpRouteImport } from './routes/osasco-sp'
 import { Route as Nr1RiscosPsicossociaisRouteImport } from './routes/nr-1-riscos-psicossociais'
 import { Route as MedicinaDoTrabalhoRouteImport } from './routes/medicina-do-trabalho'
 import { Route as LaudosRouteImport } from './routes/laudos'
-import { Route as osascoSpRouteImport } from './routes/osasco-sp'
 import { Route as EsocialSstRouteImport } from './routes/esocial-sst'
 import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as CasosRouteImport } from './routes/casos'
@@ -35,6 +35,7 @@ import { Route as AdminCategoriasRouteImport } from './routes/admin.categorias'
 import { Route as AdminBlogRouteImport } from './routes/admin.blog'
 import { Route as AdminAutoresRouteImport } from './routes/admin.autores'
 import { Route as AdminBlogNovoRouteImport } from './routes/admin.blog.novo'
+import { Route as AdminBlogEditarRouteImport } from './routes/admin.blog.editar'
 import { Route as AdminBlogEditarIdRouteImport } from './routes/admin.blog.editar.$id'
 
 const TreinamentosNrRoute = TreinamentosNrRouteImport.update({
@@ -72,6 +73,11 @@ const PcmsoRoute = PcmsoRouteImport.update({
   path: '/pcmso',
   getParentRoute: () => rootRouteImport,
 } as any)
+const OsascoSpRoute = OsascoSpRouteImport.update({
+  id: '/osasco-sp',
+  path: '/osasco-sp',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const Nr1RiscosPsicossociaisRoute = Nr1RiscosPsicossociaisRouteImport.update({
   id: '/nr-1-riscos-psicossociais',
   path: '/nr-1-riscos-psicossociais',
@@ -85,11 +91,6 @@ const MedicinaDoTrabalhoRoute = MedicinaDoTrabalhoRouteImport.update({
 const LaudosRoute = LaudosRouteImport.update({
   id: '/laudos',
   path: '/laudos',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const osascoSpRoute = osascoSpRouteImport.update({
-  id: '/osasco-sp',
-  path: '/osasco-sp',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EsocialSstRoute = EsocialSstRouteImport.update({
@@ -167,10 +168,15 @@ const AdminBlogNovoRoute = AdminBlogNovoRouteImport.update({
   path: '/novo',
   getParentRoute: () => AdminBlogRoute,
 } as any)
-const AdminBlogEditarIdRoute = AdminBlogEditarIdRouteImport.update({
-  id: '/editar/$id',
-  path: '/editar/$id',
+const AdminBlogEditarRoute = AdminBlogEditarRouteImport.update({
+  id: '/editar',
+  path: '/editar',
   getParentRoute: () => AdminBlogRoute,
+} as any)
+const AdminBlogEditarIdRoute = AdminBlogEditarIdRouteImport.update({
+  id: '/$id',
+  path: '/$id',
+  getParentRoute: () => AdminBlogEditarRoute,
 } as any)
 
 export interface FileRoutesByFullPath {
@@ -180,10 +186,10 @@ export interface FileRoutesByFullPath {
   '/casos': typeof CasosRoute
   '/contato': typeof ContatoRoute
   '/esocial-sst': typeof EsocialSstRoute
-  '/osasco-sp': typeof osascoSpRoute
   '/laudos': typeof LaudosRoute
   '/medicina-do-trabalho': typeof MedicinaDoTrabalhoRoute
   '/nr-1-riscos-psicossociais': typeof Nr1RiscosPsicossociaisRoute
+  '/osasco-sp': typeof OsascoSpRoute
   '/pcmso': typeof PcmsoRoute
   '/perguntas-frequentes': typeof PerguntasFrequentesRoute
   '/pgr': typeof PgrRoute
@@ -199,6 +205,7 @@ export interface FileRoutesByFullPath {
   '/admin/seo': typeof AdminSeoRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/admin/': typeof AdminIndexRoute
+  '/admin/blog/editar': typeof AdminBlogEditarRouteWithChildren
   '/admin/blog/novo': typeof AdminBlogNovoRoute
   '/admin/blog/editar/$id': typeof AdminBlogEditarIdRoute
 }
@@ -209,10 +216,10 @@ export interface FileRoutesByTo {
   '/casos': typeof CasosRoute
   '/contato': typeof ContatoRoute
   '/esocial-sst': typeof EsocialSstRoute
-  '/osasco-sp': typeof osascoSpRoute
   '/laudos': typeof LaudosRoute
   '/medicina-do-trabalho': typeof MedicinaDoTrabalhoRoute
   '/nr-1-riscos-psicossociais': typeof Nr1RiscosPsicossociaisRoute
+  '/osasco-sp': typeof OsascoSpRoute
   '/pcmso': typeof PcmsoRoute
   '/perguntas-frequentes': typeof PerguntasFrequentesRoute
   '/pgr': typeof PgrRoute
@@ -228,6 +235,7 @@ export interface FileRoutesByTo {
   '/admin/seo': typeof AdminSeoRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/admin': typeof AdminIndexRoute
+  '/admin/blog/editar': typeof AdminBlogEditarRouteWithChildren
   '/admin/blog/novo': typeof AdminBlogNovoRoute
   '/admin/blog/editar/$id': typeof AdminBlogEditarIdRoute
 }
@@ -239,10 +247,10 @@ export interface FileRoutesById {
   '/casos': typeof CasosRoute
   '/contato': typeof ContatoRoute
   '/esocial-sst': typeof EsocialSstRoute
-  '/osasco-sp': typeof osascoSpRoute
   '/laudos': typeof LaudosRoute
   '/medicina-do-trabalho': typeof MedicinaDoTrabalhoRoute
   '/nr-1-riscos-psicossociais': typeof Nr1RiscosPsicossociaisRoute
+  '/osasco-sp': typeof OsascoSpRoute
   '/pcmso': typeof PcmsoRoute
   '/perguntas-frequentes': typeof PerguntasFrequentesRoute
   '/pgr': typeof PgrRoute
@@ -258,6 +266,7 @@ export interface FileRoutesById {
   '/admin/seo': typeof AdminSeoRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/admin/': typeof AdminIndexRoute
+  '/admin/blog/editar': typeof AdminBlogEditarRouteWithChildren
   '/admin/blog/novo': typeof AdminBlogNovoRoute
   '/admin/blog/editar/$id': typeof AdminBlogEditarIdRoute
 }
@@ -270,10 +279,10 @@ export interface FileRouteTypes {
     | '/casos'
     | '/contato'
     | '/esocial-sst'
-    | '/osasco-sp'
     | '/laudos'
     | '/medicina-do-trabalho'
     | '/nr-1-riscos-psicossociais'
+    | '/osasco-sp'
     | '/pcmso'
     | '/perguntas-frequentes'
     | '/pgr'
@@ -289,6 +298,7 @@ export interface FileRouteTypes {
     | '/admin/seo'
     | '/blog/$slug'
     | '/admin/'
+    | '/admin/blog/editar'
     | '/admin/blog/novo'
     | '/admin/blog/editar/$id'
   fileRoutesByTo: FileRoutesByTo
@@ -299,10 +309,10 @@ export interface FileRouteTypes {
     | '/casos'
     | '/contato'
     | '/esocial-sst'
-    | '/osasco-sp'
     | '/laudos'
     | '/medicina-do-trabalho'
     | '/nr-1-riscos-psicossociais'
+    | '/osasco-sp'
     | '/pcmso'
     | '/perguntas-frequentes'
     | '/pgr'
@@ -318,6 +328,7 @@ export interface FileRouteTypes {
     | '/admin/seo'
     | '/blog/$slug'
     | '/admin'
+    | '/admin/blog/editar'
     | '/admin/blog/novo'
     | '/admin/blog/editar/$id'
   id:
@@ -328,10 +339,10 @@ export interface FileRouteTypes {
     | '/casos'
     | '/contato'
     | '/esocial-sst'
-    | '/osasco-sp'
     | '/laudos'
     | '/medicina-do-trabalho'
     | '/nr-1-riscos-psicossociais'
+    | '/osasco-sp'
     | '/pcmso'
     | '/perguntas-frequentes'
     | '/pgr'
@@ -347,6 +358,7 @@ export interface FileRouteTypes {
     | '/admin/seo'
     | '/blog/$slug'
     | '/admin/'
+    | '/admin/blog/editar'
     | '/admin/blog/novo'
     | '/admin/blog/editar/$id'
   fileRoutesById: FileRoutesById
@@ -358,10 +370,10 @@ export interface RootRouteChildren {
   CasosRoute: typeof CasosRoute
   ContatoRoute: typeof ContatoRoute
   EsocialSstRoute: typeof EsocialSstRoute
-  osascoSpRoute: typeof osascoSpRoute
   LaudosRoute: typeof LaudosRoute
   MedicinaDoTrabalhoRoute: typeof MedicinaDoTrabalhoRoute
   Nr1RiscosPsicossociaisRoute: typeof Nr1RiscosPsicossociaisRoute
+  OsascoSpRoute: typeof OsascoSpRoute
   PcmsoRoute: typeof PcmsoRoute
   PerguntasFrequentesRoute: typeof PerguntasFrequentesRoute
   PgrRoute: typeof PgrRoute
@@ -429,6 +441,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PcmsoRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/osasco-sp': {
+      id: '/osasco-sp'
+      path: '/osasco-sp'
+      fullPath: '/osasco-sp'
+      preLoaderRoute: typeof OsascoSpRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/nr-1-riscos-psicossociais': {
       id: '/nr-1-riscos-psicossociais'
       path: '/nr-1-riscos-psicossociais'
@@ -448,13 +467,6 @@ declare module '@tanstack/react-router' {
       path: '/laudos'
       fullPath: '/laudos'
       preLoaderRoute: typeof LaudosRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/osasco-sp': {
-      id: '/osasco-sp'
-      path: '/osasco-sp'
-      fullPath: '/osasco-sp'
-      preLoaderRoute: typeof osascoSpRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/esocial-sst': {
@@ -562,12 +574,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminBlogNovoRouteImport
       parentRoute: typeof AdminBlogRoute
     }
+    '/admin/blog/editar': {
+      id: '/admin/blog/editar'
+      path: '/editar'
+      fullPath: '/admin/blog/editar'
+      preLoaderRoute: typeof AdminBlogEditarRouteImport
+      parentRoute: typeof AdminBlogRoute
+    }
     '/admin/blog/editar/$id': {
       id: '/admin/blog/editar/$id'
-      path: '/editar/$id'
+      path: '/$id'
       fullPath: '/admin/blog/editar/$id'
       preLoaderRoute: typeof AdminBlogEditarIdRouteImport
-      parentRoute: typeof AdminBlogRoute
+      parentRoute: typeof AdminBlogEditarRoute
     }
   }
 }
@@ -582,14 +601,26 @@ const BlogRouteChildren: BlogRouteChildren = {
 
 const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
 
-interface AdminBlogRouteChildren {
-  AdminBlogNovoRoute: typeof AdminBlogNovoRoute
+interface AdminBlogEditarRouteChildren {
   AdminBlogEditarIdRoute: typeof AdminBlogEditarIdRoute
 }
 
-const AdminBlogRouteChildren: AdminBlogRouteChildren = {
-  AdminBlogNovoRoute: AdminBlogNovoRoute,
+const AdminBlogEditarRouteChildren: AdminBlogEditarRouteChildren = {
   AdminBlogEditarIdRoute: AdminBlogEditarIdRoute,
+}
+
+const AdminBlogEditarRouteWithChildren = AdminBlogEditarRoute._addFileChildren(
+  AdminBlogEditarRouteChildren,
+)
+
+interface AdminBlogRouteChildren {
+  AdminBlogEditarRoute: typeof AdminBlogEditarRouteWithChildren
+  AdminBlogNovoRoute: typeof AdminBlogNovoRoute
+}
+
+const AdminBlogRouteChildren: AdminBlogRouteChildren = {
+  AdminBlogEditarRoute: AdminBlogEditarRouteWithChildren,
+  AdminBlogNovoRoute: AdminBlogNovoRoute,
 }
 
 const AdminBlogRouteWithChildren = AdminBlogRoute._addFileChildren(
@@ -603,10 +634,10 @@ const rootRouteChildren: RootRouteChildren = {
   CasosRoute: CasosRoute,
   ContatoRoute: ContatoRoute,
   EsocialSstRoute: EsocialSstRoute,
-  osascoSpRoute: osascoSpRoute,
   LaudosRoute: LaudosRoute,
   MedicinaDoTrabalhoRoute: MedicinaDoTrabalhoRoute,
   Nr1RiscosPsicossociaisRoute: Nr1RiscosPsicossociaisRoute,
+  OsascoSpRoute: OsascoSpRoute,
   PcmsoRoute: PcmsoRoute,
   PerguntasFrequentesRoute: PerguntasFrequentesRoute,
   PgrRoute: PgrRoute,

@@ -25,7 +25,7 @@ type SeoRow = {
 const SUGGESTED_PATHS = [
   "/", "/blog", "/medicina-do-trabalho", "/pcmso", "/pgr", "/esocial-sst",
   "/nr-1-riscos-psicossociais", "/laudos-tecnicos", "/ltcat", "/aso-exame-ocupacional",
-  "/treinamentos-nr", "/protecao-empresarial-sst", "/osasco-sp", "/perguntas-frequentes",
+  "/treinamentos-nr", "/protecao-empresarial-sst", "/franca-sp", "/perguntas-frequentes",
 ];
 
 function isValidUrlOrPath(s: string) {

@@ -3,4 +3,4 @@ Allow: /
 Disallow: /admin
 Disallow: /admin/
 
-Sitemap: https://dmgocupacional.com/sitemap.xml
+Sitemap: https://dmg-protected-care.lovable.app/sitemap.xml

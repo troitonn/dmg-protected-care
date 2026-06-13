@@ -6,11 +6,11 @@ export const Route = createFileRoute("/esocial-sst")({
     meta: [
     { title: "eSocial SST — S-2210, S-2220 e S-2240 | DMG Ocupacional" },
     { name: "description", content: "Envio correto e dentro do prazo dos eventos de SST no eSocial." },
-    { property: "og:url", content: "https://dmgocupacional.com/esocial-sst" },
+    { property: "og:url", content: "https://dmg-protected-care.lovable.app/esocial-sst" },
     { property: "og:type", content: "website" },
   ],
-    links: [{ rel: "canonical", href: "https://dmgocupacional.com/esocial-sst" }],
-    scripts: [{ type: "application/ld+json", children: "{\"@context\": \"https://schema.org\", \"@type\": \"Service\", \"name\": \"eSocial SST\", \"description\": \"Envio dos eventos S-2210, S-2220 e S-2240 dentro do prazo legal, evitando multas e inconsist\u00eancias cadastrais.\", \"serviceType\": \"eSocial SST\", \"provider\": {\"@id\": \"https://dmgocupacional.com/#business\"}, \"areaServed\": [{\"@type\": \"City\", \"name\": \"Osasco\"}, {\"@type\": \"City\", \"name\": \"Itapevi\"}, {\"@type\": \"City\", \"name\": \"Cajamar\"}, {\"@type\": \"City\", \"name\": \"Carapicu\u00edba\"}], \"url\": \"https://dmgocupacional.com/esocial-sst\"}" }],
+    links: [{ rel: "canonical", href: "https://dmg-protected-care.lovable.app/esocial-sst" }],
+    scripts: [{ type: "application/ld+json", children: "{\"@context\": \"https://schema.org\", \"@type\": \"Service\", \"name\": \"eSocial SST\", \"description\": \"Envio dos eventos S-2210, S-2220 e S-2240 dentro do prazo legal, evitando multas e inconsist\u00eancias cadastrais.\", \"serviceType\": \"eSocial SST\", \"provider\": {\"@id\": \"https://dmg-protected-care.lovable.app/#business\"}, \"areaServed\": [{\"@type\": \"City\", \"name\": \"Osasco\"}, {\"@type\": \"City\", \"name\": \"Itapevi\"}, {\"@type\": \"City\", \"name\": \"Cajamar\"}, {\"@type\": \"City\", \"name\": \"Carapicu\u00edba\"}], \"url\": \"https://dmg-protected-care.lovable.app/esocial-sst\"}" }],
   }),
   component: () => (
     <InnerPage
