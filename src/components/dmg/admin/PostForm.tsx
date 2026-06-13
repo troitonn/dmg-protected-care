@@ -140,13 +140,14 @@ export function PostForm({ postId }: { postId?: string }) {
 
   useEffect(() => {
     if (!postId) return;
+    const id = postId;
 
     async function loadPost() {
       try {
         const { data, error } = await supabase
           .from("blog_posts")
           .select("*")
-          .eq("id", postId)
+          .eq("id", id)
           .maybeSingle();
 
         if (error) throw error;
@@ -187,13 +188,13 @@ export function PostForm({ postId }: { postId?: string }) {
             supabase
               .from("blog_faqs")
               .select("question,answer,sort_order")
-              .eq("post_id", postId)
+              .eq("post_id", id)
               .order("sort_order"),
 
             supabase
               .from("blog_related_posts")
               .select("related_post_id")
-              .eq("post_id", postId),
+              .eq("post_id", id),
           ]);
 
         setFaqs(

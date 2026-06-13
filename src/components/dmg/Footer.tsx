@@ -55,36 +55,15 @@ export function Footer() {
         </div>
       </div>
 
-<div className="border-t border-white/10">
-  <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-3 px-5 py-5 text-xs text-white/55 lg:flex-row lg:items-center lg:px-8">
-    
-    <p className="max-w-3xl leading-relaxed">
-      © {new Date().getFullYear()} DMG Ocupacional — Especialistas em medicina ocupacional,
-      segurança do trabalho, PGR, PCMSO, eSocial SST e gestão de riscos ocupacionais
-      para empresas em Osasco, Itapevi, Cajamar, Carapicuíba e Grande São Paulo.
-    </p>
-
-    <div className="flex flex-wrap gap-5">
-      <a
-        href="/politica-de-privacidade"
-        className="transition-colors hover:text-white"
-        aria-label="Leia nossa política de privacidade"
-      >
-        Política de Privacidade
-      </a>
-
-      <a
-        href="https://share.google/GLecgKN04BaxgfLmP"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="transition-colors hover:text-white"
-        aria-label="Perfil da DMG Ocupacional no Google Business"
-      >
-        Google Business Profile
-      </a>
-    </div>
-  </div>
-</div>
+      <div className="border-t border-white/10">
+        <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-2 px-5 py-5 text-xs text-white/55 lg:flex-row lg:items-center lg:px-8">
+          <p>© {new Date().getFullYear()} DMG Ocupacional · Medicina e segurança do trabalho · Osasco / Grande São Paulo</p>
+          <div className="flex gap-5">
+            <a href="#" className="hover:text-white">Política de privacidade</a>
+            <a href="#" className="hover:text-white">Google Business</a>
+          </div>
+        </div>
+      </div>
     </footer>
   );
 }
