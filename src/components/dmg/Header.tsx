@@ -30,7 +30,7 @@ export function Header() {
             className="flex items-center"
             aria-label="DMG Ocupacional — Início"
           >
-            <DmgLogo className="h-9 w-auto lg:h-10" />
+            <DmgLogo className="h-12 w-auto lg:h-14" />
           </Link>
         </div>
 
