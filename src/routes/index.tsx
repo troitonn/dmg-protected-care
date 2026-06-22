@@ -67,6 +67,7 @@ function Home() {
       <SocialProof />
       <LocationSection />
       <FinalCTA />
+      <FAQSection />
     </SiteLayout>
   );
 }
