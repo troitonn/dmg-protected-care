@@ -3,7 +3,7 @@ import { SiteLayout } from "@/components/dmg/SiteLayout";
 import {
   Hero, AuthoritySection, ProblemSection, SolutionsSection, NR1Section,
   WhyDmgSection, DiagnosticToolsSection, BlogPreview, SocialProof,
-  LocationSection, FinalCTA,
+  LocationSection, FAQSection, FinalCTA,
 } from "@/components/dmg/sections";
 
 export const Route = createFileRoute("/")({
