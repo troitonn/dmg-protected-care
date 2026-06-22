@@ -9,6 +9,8 @@ import heroImg from "@/assets/hero-industrial.jpg";
 import nr1Img from "@/assets/nr1-psicossocial.jpg";
 import equipeImg from "@/assets/equipe-dmg.jpg";
 import mechPattern from "@/assets/pattern-mech.png";
+import { useState } from "react";
+import { ChevronDown } from "lucide-react";
 
 /* ============================ HERO ============================ */
 export function Hero() {
@@ -465,6 +467,79 @@ export function LocationSection() {
             loading="lazy"
           />
         </div>
+      </div>
+    </section>
+  );
+}
+
+/* ========================= FAQ ========================= */
+
+export function FAQSection() {
+  const [open, setOpen] = useState<number | null>(0);
+
+  const FAQS = [
+    {
+      q: "Toda empresa precisa de PCMSO e PGR?",
+      a: "Sim. Toda empresa com empregados CLT precisa manter PCMSO e PGR, exceto exceções específicas previstas em norma.",
+    },
+    {
+      q: "O que acontece se eu não enviar os eventos do eSocial SST?",
+      a: "A empresa fica exposta a multas, inconsistências cadastrais e perda de defesa em ações trabalhistas e previdenciárias.",
+    },
+    {
+      q: "Como funciona a adequação à NR-1?",
+      a: "Diagnóstico psicossocial, integração ao PGR, plano de ação documentado e treinamento das lideranças.",
+    },
+    {
+      q: "A DMG atende fora de Osasco-SP?",
+      a: "Sim. A DMG atende Osasco, Itapevi, Cajamar, Carapicuíba e região com atendimento presencial e in company quando necessário.",
+    },
+  ];
+
+  return (
+    <section className="bg-background py-24">
+      <div className="mx-auto max-w-4xl px-5 lg:px-8">
+
+        <div className="text-center mb-12">
+          <SectionTag>FAQ</SectionTag>
+
+          <h2 className="mt-4 text-3xl font-semibold text-primary sm:text-4xl">
+            Perguntas frequentes
+          </h2>
+
+          <p className="mt-4 text-muted-foreground">
+            Dúvidas comuns sobre medicina do trabalho, PCMSO, PGR e eSocial SST.
+          </p>
+        </div>
+
+        <div className="space-y-4">
+          {FAQS.map((faq, index) => (
+            <div
+              key={faq.q}
+              className="rounded-2xl border border-border bg-muted/20"
+            >
+              <button
+                onClick={() => setOpen(open === index ? null : index)}
+                className="flex w-full items-center justify-between p-5 text-left"
+              >
+                <span className="font-medium">{faq.q}</span>
+
+                <ChevronDown
+                  className={`h-4 w-4 transition-transform ${
+                    open === index ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+
+              {open === index && (
+                <div className="px-5 pb-5 text-sm text-muted-foreground">
+                  {faq.a}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+
       </div>
     </section>
   );
